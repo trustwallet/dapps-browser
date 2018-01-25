@@ -22,22 +22,31 @@
   font-size: large;
   font-weight: 100;
   color: #222;
-  width: 510px;
+  max-width: 500px;
   display: inline-table;
   margin: 3px;
 }
 
+header.App-btn {
+  margin-top: 22vh;
+}
+
+@media only screen and (max-width: 470px) {
+  header.App-btn {
+    margin-top: 30vh;
+  }
+}
+
 button {
-  margin-top: 140px;
   border: none;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 15px;
   cursor: pointer;
-  padding: 20px;
+  padding: 15px;
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 700;
+  font-weight: 600;
   outline: none;
   position: relative;
   -webkit-transition: all 0.3s;
@@ -45,11 +54,10 @@ button {
   transition: all 0.3s;
   background: #2e91db;
   color: #fff;
-  box-shadow: 0 6px #3375BB;
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
 }
 
 h1.title {

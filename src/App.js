@@ -6,7 +6,9 @@ import {
   Link
 } from 'react-router-dom'
 import {
-    Media
+  Row,
+  Col,
+  Media
 } from 'reactstrap';
 import logo from './logo_solid_square_blue.png';
 import './App.css';
@@ -49,11 +51,21 @@ const Home = () => (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">What is the DApps?</h1>
-        <p className="App-intro">
-        DApps is an acronym for remembering the five qualities for effective goals of Dated, Achievable, Personal, Positive and Specific. Dated: Effective goals have specific deadlines. Short-term goals have deadlines of a few months. A long-term goal has a deadline of a year or more on up to 10 years.
-        </p>
+        <Row>
+          <Col sm="12" md={{ size: 8, offset: 2 }}>
+            <p className="App-intro">
+          DApps is an acronym for remembering the five qualities for effective goals of Dated, Achievable, Personal, Positive and Specific. Dated: Effective goals have specific deadlines. Short-term goals have deadlines of a few months. A long-term goal has a deadline of a year or more on up to 10 years.
+            </p>
+          </Col>
+        </Row>
       </header>
-    <Link to='/browser'><button id="btn">Get Started</button></Link>
+      <header className="App-btn">
+        <Row>
+          <Col>
+          <Link to='/browser'><button id="btn">Get Started</button></Link>
+          </Col>
+        </Row>
+      </header>
     </div>
   </div>
 )
