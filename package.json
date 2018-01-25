@@ -2,7 +2,7 @@
   "name": "dapp-browser",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trustwallet.github.io/dapp-browser/",
+  "homepage": "https://trustwallet.github.io",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "gh-pages": "^1.1.0",
