@@ -74,17 +74,21 @@ const Browser = () => (
   <div>
   <h1 className="title">DApp Browser</h1>
   <h2 className="categories">Games</h2>
-    <Media className="mt-1">
-      <Media left top href="/">
-        <img src={logo} className="App-logo" alt="logo" />
-      </Media>
-      <Media body>
-        <Media heading>
-          Cryptokitties
-        </Media>
-        Collect and breed adorable digital cats.
-      </Media>
-    </Media>
+    <Row>
+      <Col>
+        <Media className="mt-1">
+          <Media left top href="/">
+            <img src={logo} className="App-logo" alt="logo" />
+          </Media>
+          <Media body>
+            <Media heading>
+              <a href="https://www.cryptokitties.co/">Cryptokitties</a>
+            </Media>
+            Collect and breed adorable digital cats.
+          </Media>
+        </Media>   
+      </Col>
+    </Row>
 
     <Media className="mt-1">
       <Media left middle href="/">
@@ -92,7 +96,7 @@ const Browser = () => (
       </Media>
       <Media body>
         <Media heading>
-          CryptoPunks
+          <a href="https://www.larvalabs.com/cryptopunks">CryptoPunks</a>
         </Media>
         10,000 unique collectible punks.
       </Media>
@@ -104,7 +108,7 @@ const Browser = () => (
       </Media>
       <Media body>
         <Media heading>
-          Funfair Demo
+          <a href="https://funfair.io/">Funfair Demo</a>
         </Media>
         3D blockchain casino demo (testnet)
       </Media>
@@ -116,7 +120,7 @@ const Browser = () => (
       </Media>
       <Media body>
         <Media heading>
-          Tug of War
+          <a href="https://tugofwar.io/">Tug of War</a>
         </Media>
         A fully decentralized 2 player game.
       </Media>
@@ -129,7 +133,7 @@ const Browser = () => (
       </Media>
       <Media body>
         <Media heading>
-          Ethlance
+          <a href="https://ethlance.com/">Ethlance</a>
         </Media>
         Hire or work for Ether.
       </Media>
@@ -141,7 +145,7 @@ const Browser = () => (
       </Media>
       <Media body>
         <Media heading>
-          Name Bazaar
+          <a href="https://namebazaar.io">Name Bazaar</a>
         </Media>
         ENS name marketplace
       </Media>
