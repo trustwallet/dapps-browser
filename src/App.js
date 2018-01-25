@@ -63,7 +63,7 @@ const Browser = () => (
   <h1 className="title">DApp Browser</h1>
   <h2 className="categories">Games</h2>
     <Media className="mt-1">
-      <Media left top href="#">
+      <Media left top href="/">
         <img src={logo} className="App-logo" alt="logo" />
       </Media>
       <Media body>
@@ -75,7 +75,7 @@ const Browser = () => (
     </Media>
 
     <Media className="mt-1">
-      <Media left middle href="#">
+      <Media left middle href="/">
       <img src={logo} className="App-logo" alt="logo" />
       </Media>
       <Media body>
@@ -87,7 +87,7 @@ const Browser = () => (
     </Media>
 
     <Media className="mt-1">
-      <Media left bottom href="#">
+      <Media left bottom href="/">
       <img src={logo} className="App-logo" alt="logo" />
       </Media>
       <Media body>
@@ -99,7 +99,7 @@ const Browser = () => (
     </Media>
 
     <Media className="mt-1">
-      <Media left bottom href="#">
+      <Media left bottom href="/">
       <img src={logo} className="App-logo" alt="logo" />
       </Media>
       <Media body>
@@ -112,7 +112,7 @@ const Browser = () => (
 
     <h2 className="categories">Marketplaces</h2>
     <Media className="mt-1">
-      <Media left bottom href="#">
+      <Media left bottom href="/">
       <img src={logo} className="App-logo" alt="logo" />
       </Media>
       <Media body>
@@ -124,7 +124,7 @@ const Browser = () => (
     </Media>
 
     <Media className="mt-1">
-      <Media left bottom href="#">
+      <Media left bottom href="/">
       <img src={logo} className="App-logo" alt="logo" />
       </Media>
       <Media body>
