@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  margin-top: 18vh;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+  color: #222;
+}
+
+.App-intro {
+  font-size: large;
+  font-weight: 100;
+  color: #222;
+  width: 510px;
+  display: inline-table;
+  margin: 3px;
+}
+
+button {
+  margin-top: 140px;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #2e91db;
+  color: #fff;
+  box-shadow: 0 6px #3375BB;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+h1.title {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+h2.categories {
+  margin-left: 10px;
+  margin-top: 13px;
+}
