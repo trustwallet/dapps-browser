@@ -1,10 +1,10 @@
-# dapp-browser
-DApp browser
+# dapps-browser
+DApps browser
 
 ## Get Started
 ```
-git clone https://github.com/TrustWallet/dapp-browser.git
-cd dapp-browser
+git clone https://github.com/TrustWallet/dapps-browser.git
+cd dapps-browser
 npm install
 npm start
 ```
