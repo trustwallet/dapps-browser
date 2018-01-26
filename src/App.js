@@ -10,7 +10,7 @@ import {
   Col,
   Media
 } from 'reactstrap';
-import logo from './logo_solid_square_blue.png';
+import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
 class ModalSwitch extends React.Component {
