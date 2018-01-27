@@ -50,7 +50,7 @@ const Home = () => (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">What is the DApps browser?</h1>
+        <h1 className="App-title">What is DApps browser?</h1>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <p className="App-intro">
           DApps is an acronym for remembering the five qualities for effective goals of Dated, Achievable, Personal, Positive and Specific. Dated: Effective goals have specific deadlines. Short-term goals have deadlines of a few months. A long-term goal has a deadline of a year or more on up to 10 years.
@@ -142,19 +142,6 @@ const Browser = () => (
           <a href="https://namebazaar.io">Name Bazaar</a>
         </Media>
         ENS name marketplace
-      </Media>
-    </Media>
-
-    <h2 className="categories">Exchange Platform</h2>
-    <Media className="mt-1 align">
-      <Media left bottom href="/">
-      <img src={logo} className="App-logo" alt="logo" />
-      </Media>
-      <Media body>
-        <Media heading>
-          <a href="https://www.uport.me/">uPort</a>
-        </Media>
-        Self-Sovereign Identity
       </Media>
     </Media>
 
