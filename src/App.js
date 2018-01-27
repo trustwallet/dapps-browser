@@ -13,6 +13,8 @@ import {
 import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
+import Token from './Token.js';
+
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
 
@@ -158,6 +160,8 @@ const Browser = () => (
       </Media>
     </Media>
 
+    <Token></Token>
+    
   </div>
 );
 
