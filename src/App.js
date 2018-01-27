@@ -150,6 +150,33 @@ const Browser = () => (
         ENS name marketplace
       </Media>
     </Media>
+
+    <h2 className="categories">Exchange Platform</h2>
+    <Media className="mt-1">
+      <Media left bottom href="/">
+      <img src={logo} className="App-logo" alt="logo" />
+      </Media>
+      <Media body>
+        <Media heading>
+          <a href="https://www.uport.me/">uPort</a>
+        </Media>
+        Self-Sovereign Identity
+      </Media>
+    </Media>
+
+    <h2 className="categories">Social</h2>
+    <Media className="mt-1">
+      <Media left bottom href="/">
+      <img src={logo} className="App-logo" alt="logo" />
+      </Media>
+      <Media body>
+        <Media heading>
+          <a href="https://dnn.media/">DNN</a>
+        </Media>
+        A political news platform.
+      </Media>
+    </Media>
+
   </div>
 );
 
