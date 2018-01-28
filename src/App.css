@@ -22,8 +22,8 @@
 .App-intro {
   font-size: large;
   font-weight: 100;
-  color: #222;
-  max-width: 510px;
+  color: rgba(44,62,80,0.6);
+  max-width: 580px;
   display: inline-table;
   margin: 3px;
 }

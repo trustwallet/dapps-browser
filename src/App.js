@@ -55,7 +55,7 @@ const Home = () => (
         <h1 className="App-title">What is DApps browser?</h1>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <p className="App-intro">
-          DApps is an acronym for remembering the five qualities for effective goals of Dated, Achievable, Personal, Positive and Specific. Dated: Effective goals have specific deadlines. Short-term goals have deadlines of a few months. A long-term goal has a deadline of a year or more on up to 10 years.
+          DApps browser is like App Store but with Decentralized Applications.
             </p>
           </Col>
           <header className="App-btn">
