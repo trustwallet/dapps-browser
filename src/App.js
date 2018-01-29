@@ -55,7 +55,7 @@ const Home = () => (
         <h1 className="App-title">What is DApps browser?</h1>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <p className="App-intro">
-          DApps browser is like App Store but with Decentralized Applications.
+          Web 3 DApps browser.
             </p>
           </Col>
           <header className="App-btn">
