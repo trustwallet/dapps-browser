@@ -68,7 +68,7 @@ const Home = () => (
 
 const Browser = () => (
   <div>
-  <h1 className="title">DApps Browser</h1>
+  <h1 className="title"><a href="/">DApps Browser</a></h1>
   <h2 className="categories">Games</h2>
     <Row>
       <Col>
@@ -160,7 +160,8 @@ const Browser = () => (
       </Media>
     </Media>
 
-    <Token></Token>
+    <Token>
+    </Token>
     
   </div>
 );

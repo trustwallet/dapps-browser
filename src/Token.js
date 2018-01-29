@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Media
 } from 'reactstrap';
-import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
 const marketplace = marketplace =>
@@ -45,7 +44,7 @@ class Token extends React.Component {
 
       <Media className="mt-1 align">
         <Media left bottom href="/">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={this.state.result.docs[0].image} alt="logo" width={80} height={80} />
         </Media>
         <Media body>
           <Media heading>
