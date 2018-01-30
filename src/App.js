@@ -6,9 +6,9 @@ import {
   Link
 } from 'react-router-dom'
 import {
-  Row,
-  Col,
-  Media
+  // Row,
+  Col
+  // Media
 } from 'reactstrap';
 import logo from './logo_solid_square_blue.svg';
 import './App.css';
@@ -20,7 +20,7 @@ class ModalSwitch extends React.Component {
 
   componentWillUpdate(nextProps) {
     const { location } = this.props
-    // set previousLocation if props.location is not modal
+
     if (
       nextProps.history.action !== 'POP' &&
       (!location.state || !location.state.modal)
@@ -34,7 +34,7 @@ class ModalSwitch extends React.Component {
     const isModal = !!(
       location.state &&
       location.state.modal &&
-      this.previousLocation !== location // not initial render
+      this.previousLocation !== location
     )
     return (
       <div>
