@@ -101,10 +101,13 @@ a {
 
 a:hover {
   color: #233240;
-  opacity: 0.65;
+  opacity: 0.75;
   text-decoration: none;
 }
 
-.mt-1.align.media {
-  margin-left: 23px;
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 75px;
+    height: auto;
 }
