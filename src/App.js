@@ -6,14 +6,12 @@ import {
   Link
 } from 'react-router-dom'
 import {
-  // Row,
   Col
-  // Media
 } from 'reactstrap';
 import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
-import Token from './Token.js';
+import DApps from './DApps.js';
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
@@ -68,10 +66,9 @@ const Home = () => (
 
 const Browser = () => (
   <div>
-  <h1 className="title"><a href="/">DApps Browser</a></h1>
-    <Token>
-    </Token>
-    
+    <h1 className="title"><a href="/">DApps Browser</a></h1>
+      <DApps>
+      </DApps>
   </div>
 );
 
@@ -79,7 +76,6 @@ const App = () => (
     <Router>
       <Route component={ModalSwitch} />
     </Router>
-
 )
 
 export default App;
