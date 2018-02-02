@@ -69,8 +69,8 @@ h1.title {
 }
 
 h2.categories {
-  margin-left: 16px;
-  margin-top: 16px;
+  margin-left: 10px;
+  margin-top: 10px;
   font-weight: 700;
   font-size: 28px;
   color: #2C3E50;
@@ -79,11 +79,11 @@ h2.categories {
 }
 
 .media-body {
+  margin-left: 8px;
   -ms-flex: 1;
   flex: 1 1;
-  margin-top: 10px;
   line-height: 20px;
-  font-weight: 340;
+  font-weight: 300;
   color: rgba(44,62,80,0.6);
 }
 
@@ -110,4 +110,8 @@ img {
     border-style: none;
     width: 75px;
     height: auto;
+}
+
+a.media-left.media-bottom {
+    margin-left: 10px;
 }
