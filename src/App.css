@@ -73,10 +73,10 @@ h2.categories {
   margin-top: 10px;
   padding-top: 5px;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 22px;
   color: #2C3E50;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
 }
 
 .media-body {
@@ -84,12 +84,13 @@ h2.categories {
   -ms-flex: 1;
   flex: 1 1;
   line-height: 20px;
+  font-size: 15px;
   font-weight: 300;
   color: rgba(44,62,80,0.6);
 }
 
 h4.media-heading {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -109,7 +110,7 @@ a:hover {
 img {
     vertical-align: middle;
     border-style: none;
-    width: 75px;
+    width: 60px;
     height: auto;
 }
 

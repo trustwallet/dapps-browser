@@ -45,7 +45,7 @@ class DApps extends React.Component {
             <h2 className="categories">{dapp.category}</h2>
             <Media className="mt-1 align">
               <Media left bottom href="/">
-                <img src={dapp.image} alt="logo" width={80} height={80} />
+                <img src={dapp.image} alt="logo"/>
               </Media>
               <Media body>
               <Media heading>
