@@ -4,61 +4,77 @@ import {
 } from 'reactstrap';
 import './App.css';
 
-const marketplace = marketplace =>
-  `https://api.trustwalletapp.com/marketplace`
+export const marketsList = [
+    {
+        "name": "Cent",
+        "url": "https://beta.cent.co/",
+        "description": "Give wisdom, get money. Ask a question and offer and bounty for the best answers.",
+        "image": "https://beta.cent.co/img/logo_crop.png",
+        "category": "social"
+    },
+    {
+        "name": "Leeroy",
+        "url": "https://leeroy.io",
+        "description": "Leeroy is a decentralized social network build on Ethereum.",
+        "image": "https://ipfs.infura.io/ipfs/Qmb2YsYgyp6joBGJ9KrRcqGhDtbLjDdWCq3LFgv2duYReg",
+        "category": "social"
+    },
+    {
+        "name": "OpenSea",
+        "url": "https://opensea.io/",
+        "description": "Peer-to-peer marketplace for rare digital items",
+        "image": "https://opensea.io/static/images/opensea-icon.png",
+        "category": "marketplaces"
+    },
+    {
+        "name": "Name Bazaar",
+        "url": "https://namebazaar.io",
+        "description": "ENS name marketplace",
+        "image": "https://namebazaar.io/images/logo@2x.png",
+        "category": "marketplaces"
+    },
+    {
+        "name": "Cryptokitties",
+        "url": "https://www.cryptokitties.co/",
+        "description": "Collect and breed adorable digital cats",
+        "image": "https://www.cryptokitties.co/images/letterHead.png",
+        "category": "games"
+    }
+]
+
 
 class DApps extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      requestFailed: false
+    constructor(props) {
+        super(props);
+        this.state = { data: marketsList };
+        // { data: marketsList: []} }
+        // array will be empty
     }
-  }
 
-  componentDidMount() {
-    fetch(marketplace(this.props))
-      .then(response => {
-        if (!response.ok) {
-          throw Error("Network request failed")
-        }
-        return response
-      })
-      .then(d => d.json())
-      .then(d => {
-        this.setState({
-          result: d
-        })
-      }, () => {
-        this.setState({
-          requestFailed: true
-        })
-      })
-  }
-
-  render() {
-    if (this.state.requestFailed) return <p>Failed!</p>
-    if (!this.state.result) return <p>Retrieving ...</p>
-    return (
-      <div>
-        {this.state.result.docs.map((dapp, index) => (
-          <div key={index}>
-            <h2 className="categories">{dapp.category}</h2>
-            <Media className="mt-1 align">
-              <Media left bottom href="/">
-                <img src={dapp.image} alt="logo"/>
-              </Media>
-              <Media body>
-              <Media heading>
-                <a href={dapp.url}>{dapp.name}</a>
-              </Media>
-              {dapp.description}
-              </Media>
-            </Media>
-          </div>
-        ))}
-      </div>
-    )
-  }
+    render() {
+      console.log(this.state.data)
+        return (
+            <div className="DApps">
+              {this.state.data.map((dapp, index) => (
+                <div key={index}>
+                  <h2 className="categories">{dapp.category}</h2>
+                  <Media className="mt-1 align">
+                    <Media left bottom href="/">
+                      <img src={dapp.image} alt="logo"/>
+                    </Media>
+                    <Media body>
+                    <Media heading>
+                      <a href={dapp.url}>{dapp.name}</a>
+                    </Media>
+                    {dapp.description}
+                    </Media>
+                  </Media>
+                </div>
+              ))}
+            </div>
+        )
+    }
+    
 }
 
 export default DApps;
