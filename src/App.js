@@ -55,7 +55,7 @@ const Home = () => (
         <h1 className="App-title">What is DApps browser?</h1>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <p className="App-intro">
-          Web 3 DApps browser.
+              Web 3 DApps browser.
             </p>
           </Col>
           <header className="App-btn">
@@ -76,15 +76,15 @@ const Browser = () => (
 
 const Listings = () => (
   <div>
-        <MarketsList>
-        </MarketsList>
+    <MarketsList>
+    </MarketsList>
   </div>
 );
 
 const App = () => (
-    <Router>
-      <Route component={ModalSwitch} />
-    </Router>
+  <Router>
+    <Route component={ModalSwitch} />
+  </Router>
 );
 
 export default App;

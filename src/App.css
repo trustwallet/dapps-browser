@@ -92,6 +92,7 @@ h2.categories {
 h4.media-heading {
   font-size: 20px;
   font-weight: 500;
+  letter-spacing: 1px;
 }
 
 a {
@@ -110,7 +111,7 @@ a:hover {
 img {
     vertical-align: middle;
     border-style: none;
-    width: 60px;
+    width: 50px;
     height: auto;
 }
 
