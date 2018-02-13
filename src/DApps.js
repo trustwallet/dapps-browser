@@ -12,43 +12,35 @@ export const marketsList = [
         "image": "https://tokenfactory.netlify.com/images/icon.png",
         "category": "utility"
     },
-    // {
-    //     "name": "Cent",
-    //     "url": "https://beta.cent.co/",
-    //     "description": "Give wisdom, get money. Ask a question and offer and bounty for the best answers.",
-    //     "image": "https://beta.cent.co/img/logo_crop.png",
-    //     "category": "social"
-    // },
-    // {
-    //     "name": "OpenSea",
-    //     "url": "https://opensea.io/",
-    //     "description": "Peer-to-peer marketplace for rare digital items",
-    //     "image": "https://opensea.io/static/images/opensea-icon.png",
-    //     "category": "marketplaces"
-    // },
-    // {
-    //     "name": "Leeroy",
-    //     "url": "https://leeroy.io",
-    //     "description": "Leeroy is a decentralized social network build on Ethereum.",
-    //     "image": "https://ipfs.infura.io/ipfs/Qmb2YsYgyp6joBGJ9KrRcqGhDtbLjDdWCq3LFgv2duYReg",
-    //     "category": "social"
-    // },
-    // {
-    //     "name": "Name Bazaar",
-    //     "url": "https://namebazaar.io",
-    //     "description": "ENS name marketplace",
-    //     "image": "https://namebazaar.io/images/logo@2x.png",
-    //     "category": "marketplaces"
-    // },
-    // {
-    //     "name": "Cryptokitties",
-    //     "url": "https://www.cryptokitties.co/",
-    //     "description": "Collect and breed adorable digital cats",
-    //     "image": "https://www.cryptokitties.co/images/letterHead.png",
-    //     "category": "games"
-    // }
+    {
+        "name": "Cent",
+        "url": "https://beta.cent.co/",
+        "description": "Give wisdom, get money. Ask a question and offer and bounty for the best answers.",
+        "image": "https://beta.cent.co/img/logo_crop.png",
+        "category": "social"
+    },
+    {
+        "name": "OpenSea",
+        "url": "https://opensea.io/",
+        "description": "Peer-to-peer marketplace for rare digital items",
+        "image": "https://opensea.io/static/images/opensea-icon.png",
+        "category": "marketplaces"
+    },
+    {
+        "name": "Name Bazaar",
+        "url": "https://namebazaar.io",
+        "description": "ENS name marketplace",
+        "image": "https://namebazaar.io/images/logo@2x.png",
+        "category": "marketplaces"
+    },
+    {
+        "name": "Cryptokitties",
+        "url": "https://www.cryptokitties.co/",
+        "description": "Collect and breed adorable digital cats",
+        "image": "https://www.cryptokitties.co/images/letterHead.png",
+        "category": "games"
+    }
 ]
-
 
 class DApps extends React.Component {
     constructor(props) {
