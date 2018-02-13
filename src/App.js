@@ -6,14 +6,13 @@ import {
   Link
 } from 'react-router-dom'
 import {
-  // Row,
   Col
-  // Media
 } from 'reactstrap';
 import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
-import Token from './Token.js';
+import DApps from './DApps.js';
+import MarketsList from './MarketsList.js';
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
@@ -41,9 +40,10 @@ class ModalSwitch extends React.Component {
         <Switch location={isModal ? this.previousLocation : location}>
           <Route exact path='/' component={Home}/>
           <Route path='/browser' component={Browser}/>
+          <Route path='/listings' component={Listings}/>
         </Switch>
       </div>
-    )
+    );
   }
 }
 
@@ -55,7 +55,7 @@ const Home = () => (
         <h1 className="App-title">What is DApps browser?</h1>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <p className="App-intro">
-          Web 3 DApps browser.
+              Web 3 DApps browser.
             </p>
           </Col>
           <header className="App-btn">
@@ -64,22 +64,27 @@ const Home = () => (
       </header>
     </div>
   </div>
-)
+);
 
 const Browser = () => (
   <div>
-  <h1 className="title"><a href="/">DApps Browser</a></h1>
-    <Token>
-    </Token>
-    
+    <h1 className="title"><a href="/">DApps Browser</a></h1>
+      <DApps>
+      </DApps>
+  </div>
+);
+
+const Listings = () => (
+  <div>
+    <MarketsList>
+    </MarketsList>
   </div>
 );
 
 const App = () => (
-    <Router>
-      <Route component={ModalSwitch} />
-    </Router>
-
-)
+  <Router>
+    <Route component={ModalSwitch} />
+  </Router>
+);
 
 export default App;
