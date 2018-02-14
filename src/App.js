@@ -55,7 +55,7 @@ const Home = () => (
         <h1 className="App-title">What is DApps Browser?</h1>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <p className="App-intro">
-              It is browser that allows interact with decentralized applications on Ethereum blockchain via Web3 infrastructure.
+              It is a browser that allows interact with decentralized applications on Ethereum blockchain via Web3 infrastructure.
             </p>
           </Col>
           <header className="App-btn">
