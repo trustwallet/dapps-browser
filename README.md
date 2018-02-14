@@ -11,5 +11,5 @@ npm install
 npm start
 ```
 
-## Deploy
-`npm run deploy`
+## Deployment
+Continuous deployment with [Travis CI](https://travis-ci.org/TrustWallet/dapps-browser)
