@@ -11,8 +11,8 @@ import {
 import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
-import DApps from './DApps.js';
-import MarketsList from './MarketsList.js';
+import DApps from './components/DApps.js';
+import MarketsList from './components/MarketsList.js';
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location

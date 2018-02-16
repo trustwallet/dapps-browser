@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Media
 } from 'reactstrap';
-import './App.css';
+import '../App.css';
 
 export const marketsList = [
     {
