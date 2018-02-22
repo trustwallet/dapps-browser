@@ -11,7 +11,8 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
-    "reactstrap": "^5.0.0-alpha.4"
+    "reactstrap": "^5.0.0-alpha.4",
+    "web3": "^1.0.0-beta.30"
   },
   "scripts": {
     "predeploy": "npm run build",
