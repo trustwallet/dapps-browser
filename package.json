@@ -12,7 +12,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
     "reactstrap": "^5.0.0-alpha.4",
-    "web3": "^1.0.0-beta.30"
+    "web3": "^0.20.4"
   },
   "scripts": {
     "predeploy": "npm run build",
