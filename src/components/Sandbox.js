@@ -1,44 +1,17 @@
 import React from 'react'
-import getWeb3 from '../utils/provider'
-
-let transientState = {}
+import ConnectionStatus from './systemchecks/ConnectionStatus'
+import NetworkIdentity from './systemchecks/NetworkIdentity'
 
 class Sandbox extends React.Component {
-    componentWillMount() {
-      this.changeState({ isConnected: 'unknown' })
-    }
-
     render() {
-        let connectionStatusClass
-        switch (this.state.isConnected) {
-          case 'true':
-            connectionStatusClass = 'alert alert-success'
-            break;
-          case 'false':
-            connectionStatusClass = 'alert alert-danger'
-            break;
-          default:
-            connectionStatusClass = 'alert alert-secondary'
-        }
         return (
             <div className="sandbox">
               <h1 className="title">Sandbox</h1>
-              <h4>Is Connected</h4>
-              <button onClick={this.checkIsConnected.bind(this)}>Check Status</button>&nbsp;&nbsp;
-              <span className={connectionStatusClass} role="alert">{this.state.isConnected}</span>
+              <ConnectionStatus />
               <hr />
-              <h4>Get Network ID</h4>
+              <NetworkIdentity />
             </div>
         )
-    }
-
-    checkIsConnected (e) {
-      this.changeState({ isConnected: getWeb3().isConnected().toString() })
-    }
-
-    changeState (values) {
-      transientState = Object.assign(transientState, values)
-      this.setState(transientState)
     }
 }
 
