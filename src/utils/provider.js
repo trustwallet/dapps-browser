@@ -1,14 +1,16 @@
 import Web3 from 'web3'
 
+const global = (typeof window === 'object') ? window : global
+
 let provider,
     bundledWeb3
 
 export function getProvider () {
   if (!provider) {
-    if (web3 === undefined) {
+    if (global.web3 === undefined) {
       throw Error('this application needs to run in a DApp browser')
     } else {
-      provider = web3.currentProvider
+      provider = global.web3.currentProvider
     }
   }
 
