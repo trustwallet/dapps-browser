@@ -12,7 +12,6 @@ import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
 import DApps from './components/DApps.js';
-import MarketsList from './components/MarketsList.js';
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
@@ -40,7 +39,6 @@ class ModalSwitch extends React.Component {
         <Switch location={isModal ? this.previousLocation : location}>
           <Route exact path='/' component={Home}/>
           <Route path='/browser' component={Browser}/>
-          <Route path='/listings' component={Listings}/>
         </Switch>
       </div>
     );
@@ -68,16 +66,9 @@ const Home = () => (
 
 const Browser = () => (
   <div>
-    <h1 className="title"><a href="/">DApps Browser</a></h1>
+    <h3 className="title"><a href="/">DApps Browser</a></h3>
       <DApps>
       </DApps>
-  </div>
-);
-
-const Listings = () => (
-  <div>
-    <MarketsList>
-    </MarketsList>
   </div>
 );
 

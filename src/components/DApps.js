@@ -39,6 +39,13 @@ export const marketsList = [
         "description": "Collect and breed adorable digital cats",
         "image": "https://www.cryptokitties.co/images/letterHead.png",
         "category": "games"
+    },
+    {
+        "name": "Kyber Network",
+        "url": "https://kyber.network",
+        "description": "Decentralized exchange ",
+        "image": "/assets/kyber.png",
+        "category": "exchange"
     }
 ]
 
