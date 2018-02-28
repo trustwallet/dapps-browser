@@ -47,11 +47,18 @@ export const marketsList = [
         "image": "https://www.cryptokitties.co/images/letterHead.png",
         "category": "games"
     },
+    // {
+    //     "name": "Kyber Network",
+    //     "url": "https://kyber.network",
+    //     "description": "Decentralized exchange for ERC20 tokens.",
+    //     "image": "/assets/kyber.png",
+    //     "category": "exchanges"
+    // },
     {
-        "name": "Kyber Network",
-        "url": "https://kyber.network",
-        "description": "Decentralized exchange ",
-        "image": "/assets/kyber.png",
+        "name": "The Bancor Network",
+        "url": "https://www.bancor.network",
+        "description": "Decentralized exchange for ERC20 tokens",
+        "image": "/assets/bancor.png",
         "category": "exchanges"
     }
 ]
