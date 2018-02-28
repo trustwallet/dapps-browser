@@ -96,17 +96,19 @@ class Items extends React.Component {
       return (
           <div>
             {this.props.items.map((dapp, index) => (
+                <a href={dapp.url} key={index}>
                 <Media key={index} className="mt-1 align">
-                  <Media left bottom href={dapp.url}>
-                    <img src={dapp.image} alt="logo"/>
-                  </Media>
-                  <Media body>
-                  <Media heading>
-                    <a href={dapp.url}>{dapp.name}</a>
-                  </Media>
-                  {dapp.description}
-                  </Media>
+                    <Media left bottom href={dapp.url}>
+                        <img src={dapp.image} alt="logo"/>
+                    </Media>
+                    <Media body>
+                    <Media heading>
+                        {dapp.name}
+                    </Media>
+                    {dapp.description}
+                    </Media>
                 </Media>
+                </a>
               ))}
           </div>
       );
