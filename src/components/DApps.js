@@ -27,6 +27,13 @@ export const marketsList = [
         "category": "marketplaces"
     },
     {
+        "name": "RareBits",
+        "url": "https://rarebits.io/",
+        "description": "Buy, sell, and discover unique crypto assets",
+        "image": "/assets/rarebits.png",
+        "category": "marketplaces"
+    },
+    {
         "name": "Name Bazaar",
         "url": "https://namebazaar.io",
         "description": "ENS name marketplace",
