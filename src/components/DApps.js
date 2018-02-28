@@ -52,7 +52,7 @@ export const marketsList = [
         "url": "https://kyber.network",
         "description": "Decentralized exchange ",
         "image": "/assets/kyber.png",
-        "category": "exchange"
+        "category": "exchanges"
     }
 ]
 
