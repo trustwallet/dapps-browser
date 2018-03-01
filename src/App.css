@@ -63,9 +63,19 @@ h3.title {
   justify-content: center;
   align-items: center;
   font-weight: 730;
-  color: #fff;
-  padding: 20px;
-  background: linear-gradient(to top,#2e91db 0%,#3375BB 100%);
+  padding: 15px 10px 0px 10px;
+}
+
+.DApp-desc {
+  font-size: 13.5px;
+  font-weight: 100;
+  color: rgba(44,62,80,0.6);
+  display: inline-table;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 h2.categories {
@@ -110,16 +120,16 @@ a:hover {
 }
 
 img {
-    vertical-align: middle;
-    border-style: none;
-    width: 50px;
-    height: auto;
+  vertical-align: middle;
+  border-style: none;
+  width: 50px;
+  height: auto;
 }
 
 .mt-1.align.media {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 a.media-left.media-bottom {
-    margin-left: 10px;
+  margin-left: 10px;
 }
