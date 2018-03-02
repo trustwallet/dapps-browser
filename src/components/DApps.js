@@ -54,13 +54,13 @@ export const marketsList = [
         "image": "/assets/kyber.png",
         "category": "exchanges"
     },
-    // {
-    //     "name": "The Bancor Network",
-    //     "url": "https://www.bancor.network",
-    //     "description": "Decentralized exchange for ERC20 tokens",
-    //     "image": "/assets/bancor.png",
-    //     "category": "exchanges"
-    // }
+    {
+        "name": "The Bancor Network",
+        "url": "https://www.bancor.network",
+        "description": "Decentralized exchange for ERC20 tokens",
+        "image": "/assets/bancor.png",
+        "category": "exchanges"
+    }
 ]
 
 class DApps extends React.Component {
