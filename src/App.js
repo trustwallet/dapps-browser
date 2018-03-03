@@ -64,9 +64,9 @@ const Home = () => (
 
 const Browser = () => (
   <div>
-    <h3 className="title"><a href="/">DApps Platform</a></h3>
+    <h3 className="title"><a href="/">DApps Marketplace</a></h3>
     <p className="DApp-desc">
-      This is a list of Decentralized applications.
+      List of applications optimized to work with Trust DApps Browser.
     </p>
     <DApps>
     </DApps>
