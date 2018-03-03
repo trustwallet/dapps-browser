@@ -24,21 +24,21 @@ export const marketsList = [
         "url": "https://opensea.io/",
         "description": "Peer-to-peer marketplace for rare digital items",
         "image": "https://opensea.io/static/images/opensea-icon.png",
-        "category": "marketplaces"
+        "category": "shopping"
     },
     {
         "name": "RareBits",
         "url": "https://rarebits.io/",
         "description": "Buy, sell, and discover unique crypto assets",
         "image": "/assets/rarebits.png",
-        "category": "marketplaces"
+        "category": "shopping"
     },
     {
         "name": "Name Bazaar",
         "url": "https://namebazaar.io",
         "description": "ENS name marketplace",
         "image": "https://namebazaar.io/images/logo@2x.png",
-        "category": "marketplaces"
+        "category": "shopping"
     },
     {
         "name": "Cryptokitties",
