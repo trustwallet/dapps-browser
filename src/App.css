@@ -59,23 +59,16 @@ button {
 }
 
 h3.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-weight: 730;
   padding: 15px 10px 0px 10px;
-}
-
-.DApp-desc {
-  font-size: 13.5px;
-  font-weight: 100;
-  color: rgba(44,62,80,0.6);
-  display: inline-table;
-  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+}
+
+h1.dapps-title {
+  font-size: 26px;
+  font-weight: 700;
 }
 
 h2.categories {
@@ -104,6 +97,7 @@ h4.media-heading {
   font-weight: 500;
   letter-spacing: 1px;
   color: #233240;
+  margin-bottom: 0px;
 }
 
 a {
@@ -126,10 +120,20 @@ img {
   height: auto;
 }
 
-.mt-1.align.media {
-  padding-bottom: 5px;
-}
+/*.mt-1.align.media {
+  padding: 5px 5px 10px 5px;
+}*/
 
 a.media-left.media-bottom {
   margin-left: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.marketplace-logo {
+    width: 65px;
 }

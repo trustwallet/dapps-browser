@@ -64,10 +64,12 @@ const Home = () => (
 
 const Browser = () => (
   <div>
-    <h3 className="title"><a href="/">DApps Platform</a></h3>
-    <p className="DApp-desc">
-      This is a list of Decentralized applications.
-    </p>
+    <h3 className="title">
+      <img className="marketplace-logo" src={logo} alt="marketplace-logo"></img>
+      <a href="/">
+        <h1 className="dapps-title">DApps Marketplace</h1>
+      </a>
+    </h3>
     <DApps>
     </DApps>
   </div>

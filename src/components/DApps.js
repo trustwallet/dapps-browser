@@ -1,7 +1,11 @@
 import React from 'react';
 import {
-  Media
+    Media
 } from 'reactstrap';
+import { 
+    Flex, 
+    Box 
+} from 'grid-styled';
 import '../App.css';
 
 export const marketsList = [
@@ -63,6 +67,27 @@ export const marketsList = [
     }
 ]
 
+// function Hit({hit}) {
+//   return (
+//     <div className="hit">
+//     <h2 className="categories">{hit.category}</h2>
+//         <a href={hit.url}>
+//         <Media className="mt-1 align">
+//             <Media left bottom href={hit.url}>
+//                 <img src={hit.image} alt="logo"/>
+//             </Media>
+//             <Media body>
+//             <Media heading>
+//                 {hit.name}
+//             </Media>
+//             {hit.description}
+//             </Media>
+//         </Media>
+//         </a>
+//     </div>
+//   );
+// }
+
 class DApps extends React.Component {
     constructor(props) {
       super(props);
@@ -90,7 +115,7 @@ class DApps extends React.Component {
               {keys.map((category, index) => (
                <div key={index}>
                <h2 className="categories">{category}</h2>
-                <Items key ={index} items = {this.state.myData[category]}  />
+                <Items key={index} items={this.state.myData[category]} />
                 </div>
               ))}
             </div>
@@ -99,27 +124,46 @@ class DApps extends React.Component {
 }
 
 class Items extends React.Component {
-  render() {
-      return (
-          <div>
-            {this.props.items.map((dapp, index) => (
-                <a href={dapp.url} key={index}>
-                <Media key={index} className="mt-1 align">
-                    <Media left bottom href={dapp.url}>
-                        <img src={dapp.image} alt="logo"/>
-                    </Media>
-                    <Media body>
-                    <Media heading>
-                        {dapp.name}
-                    </Media>
-                    {dapp.description}
-                    </Media>
-                </Media>
-                </a>
-              ))}
-          </div>
-      );
-  }
+    render() {
+        return (
+            <div>
+                {this.props.items.map((dapp, index) => (
+                    <Flex flexWrap='wrap'>
+                        <Box p={2} width={[ 1, 1/2 ]}>
+                            <a href={dapp.url} key={index}>
+                            <Media key={index} className="mt-1 align">
+                                <Media left bottom href={dapp.url}>
+                                    <img src={dapp.image} alt="logo"/>
+                                </Media>
+                                <Media body>
+                                <Media heading>
+                                    {dapp.name}
+                                </Media>
+                                {dapp.description}
+                                </Media>
+                            </Media>
+                            </a>
+                        </Box>
+                        <Box p={2} width={[ 1, 1/2 ]}>
+                            <a href={dapp.url} key={index}>
+                            <Media key={index} className="mt-1 align">
+                                <Media left bottom href={dapp.url}>
+                                    <img src={dapp.image} alt="logo"/>
+                                </Media>
+                                <Media body>
+                                <Media heading>
+                                    {dapp.name}
+                                </Media>
+                                {dapp.description}
+                                </Media>
+                            </Media>
+                            </a>
+                        </Box>
+                    </Flex>
+                  ))}
+            </div>
+        );
+    }
 }
 
 export default DApps;
