@@ -67,27 +67,6 @@ export const marketsList = [
     }
 ]
 
-// function Hit({hit}) {
-//   return (
-//     <div className="hit">
-//     <h2 className="categories">{hit.category}</h2>
-//         <a href={hit.url}>
-//         <Media className="mt-1 align">
-//             <Media left bottom href={hit.url}>
-//                 <img src={hit.image} alt="logo"/>
-//             </Media>
-//             <Media body>
-//             <Media heading>
-//                 {hit.name}
-//             </Media>
-//             {hit.description}
-//             </Media>
-//         </Media>
-//         </a>
-//     </div>
-//   );
-// }
-
 class DApps extends React.Component {
     constructor(props) {
       super(props);
