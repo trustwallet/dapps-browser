@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import { Col } from 'reactstrap';
+import { Container, Col, Nav, Navbar, NavItem, NavDropdown } from 'reactstrap';
 import logo from './logo_solid_square_blue.svg';
 import './App.css';
 
@@ -34,10 +34,14 @@ class ModalSwitch extends React.Component {
     )
     return (
       <div>
-        <Switch location={isModal ? this.previousLocation : location}>
-          <Route exact path='/' component={Home}/>
-          <Route path='/browser' component={Browser}/>
-        </Switch>
+        <Container>
+          <header className="App-header">
+            <Switch location={isModal ? this.previousLocation : location}>
+              <Route exact path='/' component={Home}/>
+              <Route path='/browser' component={Browser}/>
+            </Switch>
+            </header>
+          </Container>
       </div>
     );
   }
@@ -46,7 +50,6 @@ class ModalSwitch extends React.Component {
 const Home = () => (
   <div>
     <div className="App">
-      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">What is DApps Browser?</h1>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
@@ -57,17 +60,12 @@ const Home = () => (
           <header className="App-btn">
             <Link to='/browser'><button id="btn">Get Started</button></Link>
           </header>
-      </header>
     </div>
   </div>
 );
 
 const Browser = () => (
   <div>
-    <h3 className="title"><a href="/">DApps Platform</a></h3>
-    <p className="DApp-desc">
-      This is a list of Decentralized applications.
-    </p>
     <DApps>
     </DApps>
   </div>

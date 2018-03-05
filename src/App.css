@@ -10,7 +10,6 @@
 
 .App-header {
   height: 150px;
-  padding: 20px;
   color: white;
 }
 
@@ -62,8 +61,9 @@ h3.title {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 730;
-  padding: 15px 10px 0px 10px;
+  font-weight: 530;
+  padding: 16px;
+  font-size: 18px;
 }
 
 .DApp-desc {
@@ -81,27 +81,43 @@ h3.title {
 h2.categories {
   margin-left: 10px;
   margin-top: 10px;
-  padding-top: 5px;
-  font-weight: 700;
-  font-size: 22px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  font-weight: 550;
+  font-size: 18px;
   color: #2C3E50;
   text-transform: capitalize;
   letter-spacing: 1.2px;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 .media-body {
   margin-left: 8px;
   -ms-flex: 1;
   flex: 1 1;
-  line-height: 20px;
-  font-size: 15px;
+  line-height: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: rgba(44,62,80,0.6);
 }
 
+.media-block {
+  border-radius: 10px;
+  border-color: #FF5722;
+  border-width: 2px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+}
+.media-logo {
+  width: 44px;
+  vertical-align: middle;
+  border-style: none;
+  height: auto;
+}
+
 h4.media-heading {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 400;
   letter-spacing: 1px;
   color: #233240;
 }
@@ -119,13 +135,6 @@ a:hover {
   text-decoration: none;
 }
 
-img {
-  vertical-align: middle;
-  border-style: none;
-  width: 50px;
-  height: auto;
-}
-
 .mt-1.align.media {
   padding-bottom: 5px;
 }
@@ -133,3 +142,11 @@ img {
 a.media-left.media-bottom {
   margin-left: 10px;
 }
+
+@media (max-width: 576px) { 
+  .container {
+    margin-right: 0px;
+    margin-left: 0px;
+    max-width: 100%;
+  }
+} 

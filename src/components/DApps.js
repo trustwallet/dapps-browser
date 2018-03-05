@@ -3,6 +3,7 @@ import {
   Media
 } from 'reactstrap';
 import '../App.css';
+import { Container, Row, Col} from 'reactstrap';
 
 export const marketsList = [
     {
@@ -86,27 +87,29 @@ class DApps extends React.Component {
     render() {
       const keys = Object.keys(this.state.myData)
         return (
-            <div className="DApps">
-              {keys.map((category, index) => (
-               <div key={index}>
-               <h2 className="categories">{category}</h2>
-                <Items key ={index} items = {this.state.myData[category]}  />
+                <div className="DApps">
+                    {keys.map((category, index) => (
+                    <div key={index} >
+                    <h2 className="categories">{category}</h2>
+                        <Items key ={index} items = {this.state.myData[category]}/>
+                    </div>
+                    ))}
                 </div>
-              ))}
-            </div>
         )
     }
 }
 
 class Items extends React.Component {
   render() {
-      return (
-          <div>
+      return (  
+        <div>
+            <Row>
             {this.props.items.map((dapp, index) => (
+            <Col xs="12" sm="6" md="4">
                 <a href={dapp.url} key={index}>
-                <Media key={index} className="mt-1 align">
-                    <Media left bottom href={dapp.url}>
-                        <img src={dapp.image} alt="logo"/>
+                    <Media key={index} className="mt-1 align media-block">
+                    <Media left bottom>
+                        <img src={dapp.image} alt="logo" className="media-logo"/>
                     </Media>
                     <Media body>
                     <Media heading>
@@ -114,10 +117,12 @@ class Items extends React.Component {
                     </Media>
                     {dapp.description}
                     </Media>
-                </Media>
+                    </Media>
                 </a>
-              ))}
-          </div>
+                </Col>
+            ))}
+            </Row>
+        </div>
       );
   }
 }
