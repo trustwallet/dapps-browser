@@ -5,7 +5,10 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import { Container, Col, Nav, Navbar, NavItem, NavDropdown } from 'reactstrap';
+import { 
+  Container,
+  Col 
+} from 'reactstrap';
 import logo from './logo_solid_square_blue.svg';
 import './App.css';
 

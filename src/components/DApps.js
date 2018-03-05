@@ -1,9 +1,12 @@
 import React from 'react';
 import {
-  Media
+    Media
 } from 'reactstrap';
 import '../App.css';
-import { Container, Row, Col} from 'reactstrap';
+import { 
+    Row, 
+    Col
+} from 'reactstrap';
 
 export const marketsList = [
     {
@@ -51,7 +54,7 @@ export const marketsList = [
     {
         "name": "Kyber Network",
         "url": "https://kyber.network",
-        "description": "Decentralized exchange for ERC20 tokens.",
+        "description": "Decentralized exchange for ERC20 tokens",
         "image": "/assets/kyber.png",
         "category": "exchanges"
     },
