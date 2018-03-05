@@ -142,11 +142,3 @@ a:hover {
 a.media-left.media-bottom {
   margin-left: 10px;
 }
-
-@media (max-width: 576px) { 
-  .container {
-    margin-right: 0px;
-    margin-left: 0px;
-    max-width: 100%;
-  }
-} 
