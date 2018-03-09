@@ -64,6 +64,13 @@ export const marketsList = [
         "description": "Decentralized exchange for ERC20 tokens",
         "image": "/assets/bancor.png",
         "category": "exchanges"
+    },
+    {
+        "name": "ERC dEX",
+        "url": "https://ercdex.com/",
+        "description": "Decentralized exchange based on 0x protocol",
+        "image": "/assets/ercdex.png",
+        "category": "exchanges"
     }
 ]
 
