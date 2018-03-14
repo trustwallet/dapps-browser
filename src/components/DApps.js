@@ -71,6 +71,13 @@ export const marketsList = [
         "description": "Decentralized exchange powered by 0x protocol",
         "image": "/assets/ercdex.png",
         "category": "exchanges"
+    },
+    {
+        "name": "CryptoFighters",
+        "url": "https://cryptofighters.io/",
+        "description": "Digital fighters on the blockchain.",
+        "image": "/assets/cryptoFighters.png",
+        "category": "games"
     }
 ]
 
