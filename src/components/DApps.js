@@ -86,13 +86,13 @@ export const marketsList = [
         "image": "/assets/cryptoFighters.png",
         "category": "games"
     },
-    {
-        "name": "EtherBots",
-        "url": "https://etherbots.io",
-        "description": "Decentralised Robot Wars Game",
-        "image": "/assets/etherbots.png",
-        "category": "games"
-    }
+    // {
+    //     "name": "EtherBots",
+    //     "url": "https://etherbots.io",
+    //     "description": "Decentralised Robot Wars Game",
+    //     "image": "/assets/etherbots.png",
+    //     "category": "games"
+    // }
 ]
 
 class DApps extends React.Component {
