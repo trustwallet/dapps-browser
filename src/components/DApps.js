@@ -10,6 +10,13 @@ import {
 
 export const marketsList = [
     {
+        "name": "Etherbay",
+        "url": "https://www.etherbay.com/",
+        "description": "Buy & sell crypto assets",
+        "image": "/assets/efolio.png",
+        "category": "marketplaces"
+    },
+    {
         "name": "Token Factory",
         "url": "https://tokenfactory.netlify.com/",
         "description": "Issue & Interact with Standard Token Contracts on Ethereum.",
