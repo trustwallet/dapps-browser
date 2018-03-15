@@ -12,7 +12,7 @@ export const marketsList = [
     {
         "name": "Etherbay",
         "url": "https://www.etherbay.com/",
-        "description": "Buy & sell crypto assets",
+        "description": "Buy & Sell Crypto Assets",
         "image": "/assets/efolio.png",
         "category": "marketplaces"
     },
@@ -84,6 +84,13 @@ export const marketsList = [
         "url": "https://cryptofighters.io/",
         "description": "Digital fighters on the blockchain.",
         "image": "/assets/cryptoFighters.png",
+        "category": "games"
+    },
+    {
+        "name": "EtherBots",
+        "url": "https://etherbots.io",
+        "description": "Decentralised Robot Wars Game",
+        "image": "/assets/etherbots.png",
         "category": "games"
     }
 ]
