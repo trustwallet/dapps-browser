@@ -60,7 +60,7 @@ export const marketsList = [
     },
     {
         "name": "Kyber Network",
-        "url": "https://kyber.network",
+        "url": "https://web3.kyber.network",
         "description": "Decentralized exchange for ERC20 tokens",
         "image": "/assets/kyber.png",
         "category": "exchanges"
