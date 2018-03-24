@@ -40,7 +40,7 @@ class ModalSwitch extends React.Component {
         <Container>
           <header className="App-header">
             <Switch location={isModal ? this.previousLocation : location}>
-              <Route exact path='/' component={Home}/>
+              <Route exact path='/' component={Browser}/>
               <Route path='/browser' component={Browser}/>
             </Switch>
             </header>
