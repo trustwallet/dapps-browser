@@ -15,6 +15,13 @@ export const marketsList = [
         "category": "games"
     },
     {
+        "name": "Token Store",
+        "url": "https://token.store",
+        "description": "Decentralized exchange for ERC-20 tokens with an off-chain orderbook.",
+        "image": "/assets/token.store.png",
+        "category": "exchanges"
+    },
+    {
         "name": "CryptoFighters",
         "url": "https://cryptofighters.io/",
         "description": "Digital fighters on the blockchain.",
@@ -34,13 +41,6 @@ export const marketsList = [
         "description": "Issue & Interact with Standard Token Contracts on Ethereum.",
         "image": "https://tokenfactory.netlify.com/images/icon.png",
         "category": "utility"
-    },
-    {
-        "name": "Cent",
-        "url": "https://beta.cent.co/",
-        "description": "Give wisdom, get money. Ask a question and offer and bounty for the best answers.",
-        "image": "https://beta.cent.co/img/logo_crop.png",
-        "category": "social"
     },
     {
         "name": "OpenSea",
@@ -91,14 +91,20 @@ export const marketsList = [
         "image": "/assets/ercdex.png",
         "category": "exchanges"
     },
-    
-    // {
-    //     "name": "EtherBots",
-    //     "url": "https://etherbots.io",
-    //     "description": "Decentralised Robot Wars Game",
-    //     "image": "/assets/etherbots.png",
-    //     "category": "games"
-    // }
+    {
+        "name": "Crypto Racing League",
+        "url": "https://cryptoracingleague.io/",
+        "description": "Race Card. Collectable cars on the blockchain.",
+        "image": "/assets/cryptoracing.png",
+        "category": "games"
+    },
+    {
+        "name": "EtherBots",
+        "url": "https://etherbots.io",
+        "description": "Decentralised Robot Wars Game",
+        "image": "/assets/etherbots.png",
+        "category": "games"
+    }
 ]
 
 class DApps extends React.Component {
