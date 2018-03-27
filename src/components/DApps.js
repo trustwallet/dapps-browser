@@ -111,6 +111,13 @@ export const marketsList = [
         "description": "Decentralised Robot Wars Game",
         "image": "/assets/etherbots.png",
         "category": "games"
+    },
+    {
+        "name": "Peepeth",
+        "url": "https://peepeth.com",
+        "description": "Unstoppable microblogging",
+        "image": "/assets/peepeth.png",
+        "category": "social"
     }
 ]
 
