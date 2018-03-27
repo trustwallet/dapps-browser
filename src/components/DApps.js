@@ -36,6 +36,13 @@ export const marketsList = [
         "category": "marketplaces"
     },
     {
+        "name": "Hexel",
+        "url": "https://www.onhexel.com/",
+        "description": "Create a cryptocurrency for your community",
+        "image": "/assets/hexel.png",
+        "category": "utility"
+    },
+    {
         "name": "Token Factory",
         "url": "https://tokenfactory.netlify.com/",
         "description": "Issue & Interact with Standard Token Contracts on Ethereum.",
