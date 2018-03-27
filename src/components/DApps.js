@@ -94,7 +94,7 @@ export const marketsList = [
     {
         "name": "Crypto Racing League",
         "url": "https://cryptoracingleague.io/",
-        "description": "Race Cars. Collectable cars on the blockchain.",
+        "description": "Build, Race and Trade collectible cars on the  blockchain.",
         "image": "/assets/cryptoracing.png",
         "category": "games"
     },
