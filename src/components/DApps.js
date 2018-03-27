@@ -118,6 +118,13 @@ export const marketsList = [
         "description": "Unstoppable microblogging",
         "image": "/assets/peepeth.png",
         "category": "social"
+    },
+    {
+        "name": "Decentraland",
+        "url": "https://market.decentraland.org/",
+        "description": "Browse, buy, sell, and manage LAND",
+        "image": "/assets/decentraland.png",
+        "category": "games"
     }
 ]
 
