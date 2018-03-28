@@ -7,7 +7,6 @@ import {
 import DAppItem from "./DAppItem"
 import { TrustClient } from "../network/TrustClient"
 
-
 class DApps extends React.Component {
     
     constructor(props) {
