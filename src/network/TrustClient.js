@@ -11,6 +11,6 @@ export class TrustClient {
         return axios.get(url + "/dapps/" + id)
     }
     fetchBootstrap() {
-        return axios.get(url + "/dapps/bootstrap")
+        return axios.get(url + "/dapps-bootstrap")
     }
 }
