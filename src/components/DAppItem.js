@@ -6,8 +6,9 @@ import {
 class DAppItem extends React.Component {
     render() {
         const item = this.props.item
+        const url = item.url
         return (
-            <a href={item.url}>
+            <a href={url}>
                 <Media className="mt-1 align media-block">
                 <Media left bottom>
                     <img src={item.image} alt="logo" className="media-logo"/>
