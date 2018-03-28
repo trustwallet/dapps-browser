@@ -25,15 +25,18 @@ class DApps extends React.Component {
 
     sort() {
         const myData = [].concat(this.state.data.popular)
-        let categories = {}
+        let sections = {}
         myData.forEach((item) => {
-            let id = item.category[0].name
-            let list = categories[id] || []
+            let category = item.category[0]
+            let id = category.order
+            let section = sections[id] || {category, list: []}
+            let list = section.list
             list.push(item)
-            categories[id] = list
+            sections[id] = section
         })
+
         this.setState({ 
-            myData: categories,
+            myData: sections,
             today: [].concat(this.state.data.today)
         });
     }
@@ -41,13 +44,10 @@ class DApps extends React.Component {
 
 
     componentWillMount() {
-        
-
         this.fetchList()
     }
 
     render() {
-    console.log(this.state.myData);
       const keys = Object.keys(this.state.myData || {})
       const today = (this.state.today || []).slice(0, 3)
         return (
@@ -60,9 +60,9 @@ class DApps extends React.Component {
                 </div>
             <div className="DApps">
                 {keys.map((category, index) => (
-                    <div key={index} >
-                    <h2 className="categories">{category}</h2>
-                        <Items key ={index} items = {this.state.myData[category]}/>
+                    <div key={category} >
+                    <h2 className="categories">{this.state.myData[category].category.name}</h2>
+                        <Items key ={category} items = {this.state.myData[category].list}/>
                     </div>
                 ))}
             </div>
