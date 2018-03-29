@@ -6,7 +6,7 @@ import {
 class DAppItem extends React.Component {
     render() {
         const item = this.props.item
-        const url = item.url
+        const url = item.url + "?utm_source=trustwalletapp.com"
         return (
             <a href={url}>
                 <Media className="mt-1 align media-block">

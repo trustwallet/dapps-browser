@@ -2,9 +2,12 @@ import React from 'react';
 import '../App.css';
 import { 
     Row, 
-    Col
+    Col,
 } from 'reactstrap';
-import DAppItem from "./DAppItem"
+import {
+    Link,
+} from 'react-router-dom'
+import DAppItems from "./DAppItems"
 import { TrustClient } from "../network/TrustClient"
 
 class DApps extends React.Component {
@@ -15,7 +18,7 @@ class DApps extends React.Component {
       this.trustClient = new TrustClient()
     }
 
-    fetchList() {
+    fetch() {
         this.trustClient.fetchBootstrap().then( response => {
             this.setState({ data: response.data});
             this.sort()
@@ -40,10 +43,8 @@ class DApps extends React.Component {
         });
     }
 
-
-
     componentWillMount() {
-        this.fetchList()
+        this.fetch()
     }
 
     render() {
@@ -53,37 +54,25 @@ class DApps extends React.Component {
             <div>
                 <div className="DApps">
                     <div >
-                        <h2 className="categories">New dApps</h2>
-                        <Items items = {today}/>
+                        <Link to={"category/5abcceb4682db901241a0636"}>
+                            <h2 className="categories">New dApps</h2>
+                        </Link>
+                        <DAppItems items = {today}/>
                     </div>    
                 </div>
             <div className="DApps">
                 {keys.map((category, index) => (
-                    <div key={category} >
-                    <h2 className="categories">{this.state.myData[category].category.name}</h2>
-                        <Items key ={category} items = {this.state.myData[category].list}/>
+                    <div key={category}>
+                    <Link to={"category/" + this.state.myData[category].category._id}>
+                        <h2 className="categories">{this.state.myData[category].category.name}</h2>
+                    </Link>
+                        <DAppItems key ={category} items = {this.state.myData[category].list}/>
                     </div>
                 ))}
             </div>
             </div>
         )
     }
-}
-
-class Items extends React.Component {
-  render() {
-      return (  
-        <div>
-            <Row>
-            {this.props.items.map((dapp, index) => (
-            <Col xs="12" sm="6" md="4" key={index}>
-                <DAppItem item={dapp} key={index} />
-                </Col>
-            ))}
-            </Row>
-        </div>
-      );
-  }
 }
 
 export default DApps;

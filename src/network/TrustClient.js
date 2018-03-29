@@ -10,6 +10,11 @@ export class TrustClient {
     fetchDApp(id) {
         return axios.get(url + "/dapps/" + id)
     }
+    
+    fetchDAppsByCategoryID(id) {
+        return axios.get(url + "/dapps/category/" + id)
+    }
+
     fetchBootstrap() {
         return axios.get(url + "/dapps-bootstrap")
     }

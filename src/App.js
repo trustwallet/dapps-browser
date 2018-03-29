@@ -3,16 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom'
 import { 
   Container,
-  Col 
 } from 'reactstrap';
-import logo from './logo_solid_square_blue.svg';
 import './App.css';
-
 import DApps from './components/DApps.js';
+import DAppsCategory from './components/DAppsCategory.js';
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
@@ -42,6 +39,7 @@ class ModalSwitch extends React.Component {
             <Switch location={isModal ? this.previousLocation : location}>
               <Route exact path='/' component={Browser}/>
               <Route path='/browser' component={Browser}/>
+              <Route path='/category/:id' component={DAppsCategoryComponent}/>
             </Switch>
             </header>
           </Container>
@@ -50,27 +48,17 @@ class ModalSwitch extends React.Component {
   }
 }
 
-const Home = () => (
-  <div>
-    <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">What is DApps Browser?</h1>
-          <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <p className="App-intro">
-              It is a browser that interacts with decentralized applications on Ethereum blockchain via Web3 infrastructure.
-            </p>
-          </Col>
-          <header className="App-btn">
-            <Link to='/browser'><button id="btn">Get Started</button></Link>
-          </header>
-    </div>
-  </div>
-);
-
 const Browser = () => (
   <div>
     <DApps>
     </DApps>
+  </div>
+);
+
+const DAppsCategoryComponent = ({match}) => (
+  <div>
+    <DAppsCategory id= {match.params.id}>
+    </DAppsCategory>
   </div>
 );
 
