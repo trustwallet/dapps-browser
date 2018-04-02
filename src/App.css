@@ -146,3 +146,9 @@ a.media-left.media-bottom {
 .media-logo {
   border-radius: 6px;
 }
+
+.footer {
+  padding: 10px;
+  font-size: 14px;
+  color: #6c757d;
+}

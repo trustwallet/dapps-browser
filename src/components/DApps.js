@@ -70,8 +70,31 @@ class DApps extends React.Component {
                     </div>
                 ))}
             </div>
+            <Footer configuration={{show: (keys.length !== 0)}}/>
             </div>
         )
+    }
+}
+
+class Footer extends React.Component {
+    render() {
+        const show = this.props.configuration.show
+        if (show) {
+            return (
+                <div>
+                    <hr />
+                    <div class="footer">
+                        <center>
+                            We do not control, or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and Play at your own Risk.
+                        </center>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div></div>
+            )
+        }
     }
 }
 
