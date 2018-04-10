@@ -20,57 +20,29 @@ class DApps extends React.Component {
 
     fetch() {
         this.trustClient.fetchBootstrap().then( response => {
-            this.setState({ data: response.data});
-            this.sort()
+            this.setState({ data: response.data.docs});
         });
     }   
-
-    sort() {
-        const myData = [].concat(this.state.data.popular)
-        let sections = {}
-        myData.forEach((item) => {
-            let category = item.category[0]
-            let id = category.order
-            let section = sections[id] || {category, list: []}
-            let list = section.list
-            list.push(item)
-            sections[id] = section
-        })
-
-        this.setState({ 
-            myData: sections,
-            today: [].concat(this.state.data.today)
-        });
-    }
 
     componentWillMount() {
         this.fetch()
     }
 
     render() {
-      const keys = Object.keys(this.state.myData || {})
-      const today = (this.state.today || []).slice(0, 3)
+      const elements = this.state.data || []
         return (
             <div>
-                <div className="DApps">
-                    <div >
-                        <Link to={"category/5abcceb4682db901241a0636"}>
-                            <h2 className="categories">New dApps</h2>
-                        </Link>
-                        <DAppItems items = {today}/>
-                    </div>    
-                </div>
             <div className="DApps">
-                {keys.map((category, index) => (
-                    <div key={category}>
-                    <Link to={"category/" + this.state.myData[category].category._id}>
-                        <h2 className="categories">{this.state.myData[category].category.name}</h2>
+                {elements.map((element, index) => (
+                    <div key={element}>
+                    <Link to={"category/" + element.category._id}>
+                        <h2 className="categories">{element.category.name}</h2>
                     </Link>
-                        <DAppItems key ={category} items = {this.state.myData[category].list}/>
+                        <DAppItems key ={element} items = {element.results}/>
                     </div>
                 ))}
             </div>
-            <Footer configuration={{show: (keys.length !== 0)}}/>
+            <Footer configuration={{show: (elements.length !== 0)}}/>
             </div>
         )
     }
