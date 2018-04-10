@@ -152,3 +152,11 @@ a.media-left.media-bottom {
   font-size: 14px;
   color: #6c757d;
 }
+
+.footer .contact-us {
+  margin-top: 5px;
+}
+
+.footer .contact-us .contact-us-link {
+  color: dodgerblue;
+}

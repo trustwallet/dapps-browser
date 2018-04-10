@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import { 
-    Row, 
+import {
+    Row,
     Col,
 } from 'reactstrap';
 import {
@@ -11,7 +11,7 @@ import DAppItems from "./DAppItems"
 import { TrustClient } from "../network/TrustClient"
 
 class DApps extends React.Component {
-    
+
     constructor(props) {
       super(props);
       this.state = { data: []};
@@ -22,7 +22,7 @@ class DApps extends React.Component {
         this.trustClient.fetchBootstrap().then( response => {
             this.setState({ data: response.data.docs});
         });
-    }   
+    }
 
     componentWillMount() {
         this.fetch()
@@ -58,6 +58,11 @@ class Footer extends React.Component {
                     <div class="footer">
                         <center>
                             We do not control, or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and Play at your own Risk.
+                        </center>
+                        <center class="contact-us">
+                            <Link className="contact-us-link" to="https://goo.gl/forms/GEVXRc2QSLVuOnMb2" target="_blank">
+                                Contact Us
+                            </Link>
                         </center>
                     </div>
                 </div>
