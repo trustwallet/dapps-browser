@@ -122,7 +122,7 @@ h4.media-heading {
   color: #233240;
 }
 
-a {
+dappItem {
   color: #233240;
   opacity: 0.9;
   text-decoration: none;
@@ -130,7 +130,6 @@ a {
 }
 
 a:hover {
-  color: #233240;
   opacity: 0.75;
   text-decoration: none;
 }
@@ -159,4 +158,15 @@ a.media-left.media-bottom {
 
 .footer .contact-us .contact-us-link {
   color: dodgerblue;
+}
+
+.contact-us-group {
+  color: rgb(48, 39, 40);
+  margin-top: 10%;
+  line-height: 75px;
+}
+
+.contact-us-div {
+  color: dodgerblue;
+  padding: 15px;
 }

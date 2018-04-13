@@ -13,14 +13,14 @@ import { TrustClient } from "../network/TrustClient"
 class DApps extends React.Component {
 
     constructor(props) {
-      super(props);
-      this.state = { data: []};
-      this.trustClient = new TrustClient()
+        super(props);
+        this.state = { data: [] };
+        this.trustClient = new TrustClient()
     }
 
     fetch() {
-        this.trustClient.fetchBootstrap().then( response => {
-            this.setState({ data: response.data.docs});
+        this.trustClient.fetchBootstrap().then(response => {
+            this.setState({ data: response.data.docs });
         });
     }
 
@@ -29,20 +29,20 @@ class DApps extends React.Component {
     }
 
     render() {
-      const elements = this.state.data || []
+        const elements = this.state.data || []
         return (
             <div>
-            <div className="DApps">
-                {elements.map((element, index) => (
-                    <div key={element}>
-                    <Link to={"category/" + element.category._id}>
-                        <h2 className="categories">{element.category.name}</h2>
-                    </Link>
-                        <DAppItems key ={element} items = {element.results}/>
-                    </div>
-                ))}
-            </div>
-            <Footer configuration={{show: (elements.length !== 0)}}/>
+                <div className="DApps">
+                    {elements.map((element, index) => (
+                        <div key={element}>
+                            <Link to={"category/" + element.category._id}>
+                                <h2 className="categories">{element.category.name}</h2>
+                            </Link>
+                            <DAppItems key={element} items={element.results} />
+                        </div>
+                    ))}
+                </div>
+                <Footer configuration={{ show: (elements.length !== 0) }} />
             </div>
         )
     }
@@ -60,7 +60,7 @@ class Footer extends React.Component {
                             We do not control, or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and Play at your own Risk.
                         </center>
                         <center class="contact-us">
-                            <Link className="contact-us-link" to="https://goo.gl/forms/GEVXRc2QSLVuOnMb2" target="_blank">
+                            <Link className="contact-us-link" to="/contact-us">
                                 Contact Us
                             </Link>
                         </center>
