@@ -4,12 +4,13 @@ import {
   Switch,
   Route,
 } from 'react-router-dom'
-import { 
+import {
   Container,
 } from 'reactstrap';
 import './App.css';
 import DApps from './components/DApps.js';
 import DAppsCategory from './components/DAppsCategory.js';
+import ContactUs from "./components/ContactUs.js"
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
@@ -37,12 +38,13 @@ class ModalSwitch extends React.Component {
         <Container>
           <header className="App-header">
             <Switch location={isModal ? this.previousLocation : location}>
-              <Route exact path='/' component={Browser}/>
-              <Route path='/browser' component={Browser}/>
-              <Route path='/category/:id' component={DAppsCategoryComponent}/>
+              <Route exact path='/' component={Browser} />
+              <Route path='/browser' component={Browser} />
+              <Route path='/category/:id' component={DAppsCategoryComponent} />
+              <Route path='/contact-us' component={ContactUs} />
             </Switch>
-            </header>
-          </Container>
+          </header>
+        </Container>
       </div>
     );
   }
@@ -55,9 +57,9 @@ const Browser = () => (
   </div>
 );
 
-const DAppsCategoryComponent = ({match}) => (
+const DAppsCategoryComponent = ({ match }) => (
   <div>
-    <DAppsCategory id= {match.params.id}>
+    <DAppsCategory id={match.params.id}>
     </DAppsCategory>
   </div>
 );
