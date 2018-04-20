@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +12,8 @@ import DApps from './components/DApps.js';
 import DAppsCategory from './components/DAppsCategory.js';
 import ContactUs from "./components/ContactUs.js"
 import GetEther from "./dapps/GetEther/index"
+import SandBox from './components/Sandbox'
+
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
@@ -36,19 +38,17 @@ class ModalSwitch extends React.Component {
     )
     return (
       <div>
-        <Container>
-          <header className="App-header">
-            <Switch location={isModal ? this.previousLocation : location}>
-              <Route exact path='/' component={Browser} />
-              <Route path='/browser' component={Browser} />
-              <Route path='/category/:id' component={DAppsCategoryComponent} />
-              <Route path='/contact-us' component={ContactUs} />
-              <Route path='/ether' component={GetEther} />
-            </Switch>
-          </header>
-        </Container>
+        <Switch location={isModal ? this.previousLocation : location}>
+          <Route exact path='/' component={Home}/>
+          <Route path='/browser' component={Browser}/>
+          <Route path='/listings' component={Listings}/>
+          <Route path='/sandbox' component={SystemChecks}/>
+          <Route path='/category/:id' component={DAppsCategoryComponent} />
+          <Route path='/contact-us' component={ContactUs} />
+          <Route path='/ether' component={GetEther} />
+        </Switch>
       </div>
-    );
+    )
   }
 }
 
@@ -57,19 +57,23 @@ const Browser = () => (
     <DApps>
     </DApps>
   </div>
-);
+)
 
 const DAppsCategoryComponent = ({ match }) => (
   <div>
     <DAppsCategory id={match.params.id}>
     </DAppsCategory>
   </div>
-);
+)
+
+const SystemChecks = () => (
+  <div><SandBox /></div>
+)
 
 const App = () => (
   <Router>
     <Route component={ModalSwitch} />
   </Router>
-);
+)
 
-export default App;
+export default App
