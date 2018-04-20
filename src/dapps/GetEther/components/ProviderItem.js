@@ -6,7 +6,7 @@ import {
 class ProviderItem extends React.Component {
     render() {
         const item = this.props.item
-        const url = item.url()
+        const url = item.url
         return (
             <a className="providerItem" href={url}>
                 <Media className="mt-1 align media-block">
