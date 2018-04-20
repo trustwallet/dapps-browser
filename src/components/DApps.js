@@ -1,102 +1,78 @@
 import React from 'react';
-import {
-  Media
-} from 'reactstrap';
 import '../App.css';
-
-export const marketsList = [
-    {
-        "name": "Token Factory",
-        "url": "https://tokenfactory.netlify.com/",
-        "description": "Issue & Interact with Standard Token Contracts on Ethereum.",
-        "image": "https://tokenfactory.netlify.com/images/icon.png",
-        "category": "utility"
-    },
-    {
-        "name": "Cent",
-        "url": "https://beta.cent.co/",
-        "description": "Give wisdom, get money. Ask a question and offer and bounty for the best answers.",
-        "image": "https://beta.cent.co/img/logo_crop.png",
-        "category": "social"
-    },
-    {
-        "name": "OpenSea",
-        "url": "https://opensea.io/",
-        "description": "Peer-to-peer marketplace for rare digital items",
-        "image": "https://opensea.io/static/images/opensea-icon.png",
-        "category": "marketplaces"
-    },
-    {
-        "name": "Name Bazaar",
-        "url": "https://namebazaar.io",
-        "description": "ENS name marketplace",
-        "image": "https://namebazaar.io/images/logo@2x.png",
-        "category": "marketplaces"
-    },
-    {
-        "name": "Cryptokitties",
-        "url": "https://www.cryptokitties.co/",
-        "description": "Collect and breed adorable digital cats",
-        "image": "https://www.cryptokitties.co/images/letterHead.png",
-        "category": "games"
-    }
-]
+import {
+    Row,
+    Col,
+} from 'reactstrap';
+import {
+    Link,
+} from 'react-router-dom'
+import DAppItems from "./DAppItems"
+import { TrustClient } from "../network/TrustClient"
 
 class DApps extends React.Component {
+
     constructor(props) {
-      super(props);
-      this.state = { data: marketsList };
+        super(props);
+        this.state = { data: [] };
+        this.trustClient = new TrustClient()
+    }
+
+    fetch() {
+        this.trustClient.fetchBootstrap().then(response => {
+            this.setState({ data: response.data.docs });
+        });
     }
 
     componentWillMount() {
-        const myData = [].concat(this.state.data)
-          .sort((a, b) => a.category > b.category)
-
-        let categories = {}
-        myData.forEach((item) => {
-          let list = categories[item.category] || []
-          list.push(item)
-          categories[item.category] = list
-        })
-
-        this.setState({ myData: categories });
+        this.fetch()
     }
 
     render() {
-      const keys = Object.keys(this.state.myData)
+        const elements = this.state.data || []
         return (
-            <div className="DApps">
-              {keys.map((category, index) => (
-               <div key={index}>
-               <h2 className="categories">{category}</h2>
-                <Items key ={index} items = {this.state.myData[category]}  />
+            <div>
+                <div className="DApps">
+                    {elements.map((element, index) => (
+                        <div key={element}>
+                            <Link to={"category/" + element.category._id}>
+                                <h2 className="categories">{element.category.name}</h2>
+                            </Link>
+                            <DAppItems key={element} items={element.results} />
+                        </div>
+                    ))}
                 </div>
-              ))}
+                <Footer configuration={{ show: (elements.length !== 0) }} />
             </div>
         )
     }
 }
 
-class Items extends React.Component {
-  render() {
-      return (
-          <div>
-            {this.props.items.map((dapp, index) => (
-                <Media key={index} className="mt-1 align">
-                  <Media left bottom href={dapp.url}>
-                    <img src={dapp.image} alt="logo"/>
-                  </Media>
-                  <Media body>
-                  <Media heading>
-                    <a href={dapp.url}>{dapp.name}</a>
-                  </Media>
-                  {dapp.description}
-                  </Media>
-                </Media>
-              ))}
-          </div>
-      );
-  }
+class Footer extends React.Component {
+    render() {
+        const show = this.props.configuration.show
+        if (show) {
+            return (
+                <div>
+                    <hr />
+                    <div class="footer">
+                        <center>
+                            We do not control, or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and Play at your own Risk.
+                        </center>
+                        <center class="contact-us">
+                            <Link className="contact-us-link" to="/contact-us">
+                                Contact Us
+                            </Link>
+                        </center>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div></div>
+            )
+        }
+    }
 }
 
 export default DApps;

@@ -3,16 +3,15 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom'
 import {
-  Col
-} from 'reactstrap'
-import logo from './logo_solid_square_blue.svg'
-import './App.css'
-
-import DApps from './components/DApps'
-import MarketsList from './components/MarketsList'
+  Container,
+} from 'reactstrap';
+import './App.css';
+import DApps from './components/DApps.js';
+import DAppsCategory from './components/DAppsCategory.js';
+import ContactUs from "./components/ContactUs.js"
+import GetEther from "./dapps/GetEther/index"
 import SandBox from './components/Sandbox'
 
 
@@ -44,43 +43,26 @@ class ModalSwitch extends React.Component {
           <Route path='/browser' component={Browser}/>
           <Route path='/listings' component={Listings}/>
           <Route path='/sandbox' component={SystemChecks}/>
+          <Route path='/category/:id' component={DAppsCategoryComponent} />
+          <Route path='/contact-us' component={ContactUs} />
+          <Route path='/ether' component={GetEther} />
         </Switch>
       </div>
     )
   }
 }
 
-const Home = () => (
-  <div>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">What is DApps Browser?</h1>
-          <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <p className="App-intro">
-              It is a browser that interacts with decentralized applications on Ethereum blockchain via Web3 infrastructure.
-            </p>
-          </Col>
-          <header className="App-btn">
-            <Link to='/browser'><button id="btn">Get Started</button></Link>
-          </header>
-      </header>
-    </div>
-  </div>
-)
-
 const Browser = () => (
   <div>
-    <h1 className="title"><a href="/">DApps Browser</a></h1>
-      <DApps>
-      </DApps>
+    <DApps>
+    </DApps>
   </div>
 )
 
-const Listings = () => (
+const DAppsCategoryComponent = ({ match }) => (
   <div>
-    <MarketsList>
-    </MarketsList>
+    <DAppsCategory id={match.params.id}>
+    </DAppsCategory>
   </div>
 )
 
