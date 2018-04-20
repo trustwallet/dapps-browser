@@ -38,15 +38,15 @@ class ModalSwitch extends React.Component {
     )
     return (
       <div>
-        <Switch location={isModal ? this.previousLocation : location}>
-          <Route exact path='/' component={Home}/>
-          <Route path='/browser' component={Browser}/>
-          <Route path='/listings' component={Listings}/>
-          <Route path='/sandbox' component={SystemChecks}/>
-          <Route path='/category/:id' component={DAppsCategoryComponent} />
-          <Route path='/contact-us' component={ContactUs} />
-          <Route path='/ether' component={GetEther} />
-        </Switch>
+        <Container>
+          <Switch location={isModal ? this.previousLocation : location}>
+            <Route exact path='/' component={DApps}/>
+            <Route path='/sandbox' component={SystemChecks}/>
+            <Route path='/category/:id' component={DAppsCategoryComponent} />
+            <Route path='/contact-us' component={ContactUs} />
+            <Route path='/ether' component={GetEther} />
+          </Switch>
+        </Container>
       </div>
     )
   }
