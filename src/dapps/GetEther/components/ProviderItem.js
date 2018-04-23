@@ -6,7 +6,8 @@ import {
 class ProviderItem extends React.Component {
     render() {
         const item = this.props.item
-        const url = item.url
+        const url = item.url(this.props.address)
+
         return (
             <a className="providerItem" href={url}>
                 <Media className="mt-1 align media-block">
@@ -17,7 +18,18 @@ class ProviderItem extends React.Component {
                         <Media heading>
                             {item.name}
                         </Media>
-                        {item.description}
+                        {/* <Media>
+                            {item.description}
+                        </Media> */}
+                        <Media>
+                            <b>Fees</b> : {item.fees}
+                        </Media>
+                        {/* <Media>
+                            <b>Limits </b> : {item.limits}
+                        </Media> */}
+                        <Media>
+                            <b>Delivery </b> : {item.delivery}
+                        </Media>
                     </Media>
                 </Media>
             </a>

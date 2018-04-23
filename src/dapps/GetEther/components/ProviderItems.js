@@ -12,7 +12,7 @@ class ProviderItems extends React.Component {
               <Row>
               {this.props.items.map((dapp, index) => (
               <Col xs="12" sm="6" md="4" key={index}>
-                  <ProviderItem item={dapp} key={index} />
+                  <ProviderItem item={dapp} key={index} address={this.props.address} />
                   </Col>
               ))}
               </Row>
