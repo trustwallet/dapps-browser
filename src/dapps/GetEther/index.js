@@ -63,6 +63,52 @@ const listOfProviders = [
         delivery: "Immediate",
         networks: new Set([1]),
         ignoredCountries: new Set(["US"]),
+    },
+    { 
+        name: "Ropsten Faucet",
+        description: "",
+        image: "https://res.cloudinary.com/djb6n1qih/image/upload/c_scale,h_128,w_128/v1524225248/ethereum.png",
+        // countries: new Set([
+        //     "US", "CA"
+        // ]),
+        supportAll: true,
+        url: function(address) {
+            return "http://faucet.ropsten.be:3001/"
+        },
+        fees: "Free",
+        limits: "1 test ETH",
+        delivery: "Immediate",
+        networks: new Set([3]),
+        ignoredCountries: new Set([]),
+    },
+    { 
+        name: "Rinkeby Faucet",
+        description: "",
+        image: "https://res.cloudinary.com/djb6n1qih/image/upload/c_scale,h_128,w_128/v1524225248/ethereum.png",
+        supportAll: true,
+        url: function(address) {
+            return "https://faucet.rinkeby.io/"
+        },
+        fees: "Free",
+        limits: "Up to 18 test ETH",
+        delivery: "Immediate",
+        networks: new Set([4]),
+        ignoredCountries: new Set([]),
+    }
+    ,
+    { 
+        name: "Sokol Faucet",
+        description: "",
+        image: "https://res.cloudinary.com/djb6n1qih/image/upload/c_scale,h_128,w_128/v1524225248/ethereum.png",
+        supportAll: true,
+        url: function(address) {
+            return "https://faucet-sokol.herokuapp.com/"
+        },
+        fees: "Free",
+        limits: "0.5 SPOA",
+        delivery: "Immediate",
+        networks: new Set([77]),
+        ignoredCountries: new Set([]),
     }
 ]
 
