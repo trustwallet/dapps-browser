@@ -55,11 +55,11 @@ class Footer extends React.Component {
             return (
                 <div>
                     <hr />
-                    <div class="footer">
+                    <div className="footer">
                         <center>
                             We do not control, or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and Play at your own Risk.
                         </center>
-                        <center class="contact-us">
+                        <center>
                             <Link className="contact-us-link" to="/contact-us">
                                 Contact Us
                             </Link>
