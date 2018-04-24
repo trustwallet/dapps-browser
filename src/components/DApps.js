@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 import DAppItems from "./DAppItems"
 import { TrustClient } from "../network/TrustClient"
+import getWeb3 from '../utils/provider'
 
 class DApps extends React.Component {
 
@@ -19,7 +20,8 @@ class DApps extends React.Component {
     }
 
     fetch() {
-        this.trustClient.fetchBootstrap().then(response => {
+        let network = parseInt(getWeb3().version.network)
+        this.trustClient.fetchBootstrap(network).then(response => {
             this.setState({ data: response.data.docs });
         });
     }

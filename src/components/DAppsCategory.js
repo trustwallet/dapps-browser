@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 import DAppItems from "./DAppItems"
 import { TrustClient } from "../network/TrustClient"
+import getWeb3 from '../utils/provider'
 
 class DAppsCategory extends React.Component {
     
@@ -18,7 +19,8 @@ class DAppsCategory extends React.Component {
     }
 
     fetch() {
-        this.trustClient.fetchDAppsByCategoryID(this.props.id).then( response => {
+        let network = parseInt(getWeb3().version.network)
+        this.trustClient.fetchDAppsByCategoryID(this.props.id, network).then( response => {
             let list = response.data.docs
             let category = response.data.category
             let id = category.order

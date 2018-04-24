@@ -11,11 +11,11 @@ export class TrustClient {
         return axios.get(url + "/dapps/" + id)
     }
     
-    fetchDAppsByCategoryID(id) {
-        return axios.get(url + "/dapps/category/" + id)
+    fetchDAppsByCategoryID(id, network) {
+        return axios.get(url + "/dapps/category/" + id + "?network=" + network)
     }
 
-    fetchBootstrap() {
-        return axios.get(url + "/dapps/main")
+    fetchBootstrap(network) {
+        return axios.get(url + "/dapps/main?network=" + network)
     }
 }
