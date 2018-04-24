@@ -25,7 +25,9 @@ const listOfProviders = [
         },
         fees: "up to ~4%",
         limits: "Varies",
-        delivery: "Immediate"
+        delivery: "Immediate",
+        networks: new Set([1]),
+        ignoredCountries: new Set([]),
     },
     { 
         name: "Changelly",
@@ -34,13 +36,16 @@ const listOfProviders = [
         // countries: new Set([
         //     "US", "CA"
         // ]),
+        ignoredCountries: new Set(["US"]),
         supportAll: true,
         url: function(address) {
             return "https://changelly.com/widget/v1?auth=email&from=USD&to=ETH&merchant_id=968d4f0f0bf9&ref_id=968d4f0f0bf9&color=00cf70&address=" + address
         },
-        fees: "up to ~10%",
+        fees: "up to ~5%",
         limits: "Varies",
-        delivery: "Immediate"
+        delivery: "Immediate",
+        networks: new Set([1]),
+        ignoredCountries: new Set([]),
     },
     { 
         name: "Indacoin",
@@ -55,7 +60,9 @@ const listOfProviders = [
         },
         fees: "up to ~10%",
         limits: "Varies",
-        delivery: "Immediate"
+        delivery: "Immediate",
+        networks: new Set([1]),
+        ignoredCountries: new Set(["US"]),
     }
 ]
 
@@ -86,7 +93,7 @@ class DApps extends React.Component {
                 {this.content()}
                 <br />
                 <center>
-                    <p className="media-body center">You almost there, pick a provider to buy ether on your wallet.</p>
+                    <p className="media-body center">This provider list is made for your convenience only. By proceeding you are agreeing to take full responsibility for the transaction and to the fact that Trust Wallet is not accountable for any issues that result in full or partial loss of any digital assets.</p>
                 </center>
             </div>
         )
@@ -95,6 +102,7 @@ class DApps extends React.Component {
     content() {
         let country_code = this.state.country_code
         let address = getWeb3().eth.accounts[0]
+        let network = parseInt(getWeb3().version.network)
         if (this.state.loading) {
             return (
                 <div>
@@ -103,12 +111,12 @@ class DApps extends React.Component {
             )
         } else {
             let providers = listOfProviders.filter(provider => {
-                return true //provider.countries.has(country_code)
+                return provider.networks.has(network) && !provider.ignoredCountries.has(country_code)
             });
             if (!address) {
                 return (
                     <div>
-                        No wallet address provided!
+                        No wallet address provided or not supported network!
                     </div>
                 )
             } else if (providers.length > 0) {

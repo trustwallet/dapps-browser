@@ -24,9 +24,9 @@ class ProviderItem extends React.Component {
                         <Media>
                             <b>Fees</b> : {item.fees}
                         </Media>
-                        {/* <Media>
+                        <Media>
                             <b>Limits </b> : {item.limits}
-                        </Media> */}
+                        </Media>
                         <Media>
                             <b>Delivery </b> : {item.delivery}
                         </Media>
