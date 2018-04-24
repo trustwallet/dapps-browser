@@ -34,7 +34,7 @@ class DApps extends React.Component {
             <div>
                 <div className="DApps">
                     {elements.map((element, index) => (
-                        <div key={element}>
+                        <div key={element.category._id}>
                             <Link to={"category/" + element.category._id}>
                                 <h2 className="categories">{element.category.name}</h2>
                             </Link>
