@@ -96,5 +96,19 @@ export default [
         delivery: "Immediate",
         networks: new Set([77]),
         ignoredCountries: new Set([]),
+    },
+    { 
+        name: "Kovan Faucet",
+        description: "Manual verification",
+        image: "https://res.cloudinary.com/djb6n1qih/image/upload/c_scale,h_128,w_128/v1524225248/ethereum.png",
+        supportAll: true,
+        url: function(address) {
+            return "https://gitter.im/kovan-testnet/faucet"
+        },
+        fees: "Free",
+        limits: "5 KETH",
+        delivery: "Immediate",
+        networks: new Set([42]),
+        ignoredCountries: new Set([]),
     }
 ]   
