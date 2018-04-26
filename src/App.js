@@ -52,13 +52,6 @@ class ModalSwitch extends React.Component {
   }
 }
 
-const Browser = () => (
-  <div>
-    <DApps>
-    </DApps>
-  </div>
-)
-
 const DAppsCategoryComponent = ({ match }) => (
   <div>
     <DAppsCategory id={match.params.id}>

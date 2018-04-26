@@ -1,9 +1,5 @@
 import React from 'react';
 import '../App.css';
-import { 
-    Row, 
-    Col
-} from 'reactstrap';
 import DAppItems from "./DAppItems"
 import { TrustClient } from "../network/TrustClient"
 import getWeb3 from '../utils/provider'
@@ -19,11 +15,10 @@ class DAppsCategory extends React.Component {
     }
 
     fetch() {
-        let network = parseInt(getWeb3().version.network)
+        let network = parseInt(getWeb3().version.network, 10)
         this.trustClient.fetchDAppsByCategoryID(this.props.id, network).then( response => {
             let list = response.data.docs
             let category = response.data.category
-            let id = category.order
             this.setState({
                 category: category, 
                 list: list
