@@ -1,12 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import {
-    Row,
-    Col,
-} from 'reactstrap';
-import {
-    Link,
-} from 'react-router-dom'
 import axios from "axios";
 import ProviderItems from "./components/ProviderItems"
 import getWeb3 from '../../utils/provider'
@@ -48,7 +41,7 @@ class DApps extends React.Component {
     content() {
         let country_code = this.state.country_code
         let address = getWeb3().eth.accounts[0]
-        let network = parseInt(getWeb3().version.network)
+        let network = parseInt(getWeb3().version.network, 10)
         if (this.state.loading) {
             return (
                 <div>

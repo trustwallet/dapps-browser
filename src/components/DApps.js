@@ -1,10 +1,6 @@
 import React from 'react';
 import '../App.css';
 import {
-    Row,
-    Col,
-} from 'reactstrap';
-import {
     Link,
 } from 'react-router-dom'
 import DAppItems from "./DAppItems"
@@ -20,7 +16,7 @@ class DApps extends React.Component {
     }
 
     fetch() {
-        let network = parseInt(getWeb3().version.network)
+        let network = parseInt(getWeb3().version.network, 10)
         this.trustClient.fetchBootstrap(network).then(response => {
             this.setState({ data: response.data.docs });
         });

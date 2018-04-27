@@ -8,9 +8,9 @@ class DAppItem extends React.Component {
         const item = this.props.item
         const url = item.url
         return (
-            <a className="dappItem" href={url}>
+            <Media className="dappItem" tag="a" href={url}>
                 <Media className="mt-1 align media-block">
-                    <Media left bottom>
+                    <Media bottom>
                         <img src={item.image} alt="logo" className="media-logo" />
                     </Media>
                     <Media body>
@@ -20,7 +20,7 @@ class DAppItem extends React.Component {
                         {item.description}
                     </Media>
                 </Media>
-            </a>
+            </Media>
         )
     }
 }
