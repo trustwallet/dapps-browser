@@ -43,7 +43,7 @@ export default [
         // ]),
         supportAll: true,
         url: function(address) {
-            return "https://indacoin.com/gw/payment_form?partner=trustwallet&cur_to=ETH&amount=100&address=" + address
+            return "https://indacoin.com/gw/payment_form?partner=trustwallet&cur_to=ETH&amount=100&cur_from=USD&address=" + address
         },
         fees: "up to ~10%",
         limits: "Varies",
