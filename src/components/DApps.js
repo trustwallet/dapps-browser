@@ -55,7 +55,7 @@ class Footer extends React.Component {
                     <hr />
                     <div className="footer">
                         <center>
-                            We do not control, or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and Play at your own Risk.
+                            We do not control or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and proceed at your own risk.
                         </center>
                         <center>
                             <Link className="contact-us-link" to="/contact-us">
