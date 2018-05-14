@@ -3,7 +3,7 @@ import {
     Row, 
     Col
 } from 'reactstrap';
-import DAppItem from "./DAppItem"
+import DAppItem from './DAppItem';
 
 class DAppItems extends React.Component {
     render() {

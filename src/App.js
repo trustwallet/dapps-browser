@@ -1,41 +1,41 @@
-import React from 'react'
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from 'react-router-dom'
+} from 'react-router-dom';
 import {
   Container,
 } from 'reactstrap';
 import './App.css';
 import DApps from './components/DApps.js';
 import DAppsCategory from './components/DAppsCategory.js';
-import ContactUs from "./components/ContactUs.js"
-import GetEther from "./dapps/GetEther/index"
-import SandBox from './components/Sandbox'
+import ContactUs from './components/ContactUs.js';
+import GetEther from './dapps/GetEther/index';
+import SandBox from './components/Sandbox';
 
 
 class ModalSwitch extends React.Component {
-  previousLocation = this.props.location
+  previousLocation = this.props.location;
 
   componentWillUpdate(nextProps) {
-    const { location } = this.props
+    const { location } = this.props;
 
     if (
       nextProps.history.action !== 'POP' &&
       (!location.state || !location.state.modal)
     ) {
-      this.previousLocation = this.props.location
+      this.previousLocation = this.props.location;
     }
   }
 
   render() {
-    const { location } = this.props
+    const { location } = this.props;
     const isModal = !!(
       location.state &&
       location.state.modal &&
       this.previousLocation !== location
-    )
+    );
     return (
       <div>
         <Container>

@@ -1,6 +1,6 @@
-import React from 'react'
-import ConnectionStatus from './systemchecks/ConnectionStatus'
-import NetworkIdentity from './systemchecks/NetworkIdentity'
+import React from 'react';
+import ConnectionStatus from './systemchecks/ConnectionStatus';
+import NetworkIdentity from './systemchecks/NetworkIdentity';
 
 class Sandbox extends React.Component {
     render() {

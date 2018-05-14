@@ -1,33 +1,31 @@
-import React from 'react';
-import '../App.css';
-import {
-    Link,
-} from 'react-router-dom'
-import DAppItems from "./DAppItems"
-import { TrustClient } from "../network/TrustClient"
-import getWeb3 from '../utils/provider'
+import React from "react";
+import "../App.css";
+import { Link } from "react-router-dom";
+import DAppItems from "./DAppItems";
+import { TrustClient } from "../network/TrustClient";
+import getWeb3 from "../utils/provider";
 
 class DApps extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = { data: [] };
-        this.trustClient = new TrustClient()
+        this.trustClient = new TrustClient();
     }
 
     fetch() {
-        let network = parseInt(getWeb3().version.network, 10)
+        let network = parseInt(getWeb3().version.network, 10);
         this.trustClient.fetchBootstrap(network).then(response => {
             this.setState({ data: response.data.docs });
         });
     }
 
     componentWillMount() {
-        this.fetch()
+        this.fetch();
     }
 
     render() {
-        const elements = this.state.data || []
+        const elements = this.state.data || [];
         return (
             <div>
                 <div className="DApps">

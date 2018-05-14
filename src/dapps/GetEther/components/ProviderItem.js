@@ -5,8 +5,8 @@ import {
 
 class ProviderItem extends React.Component {
     render() {
-        const item = this.props.item
-        const url = item.url(this.props.address)
+        const item = this.props.item;
+        const url = item.url(this.props.address);
 
         return (
             <a className="providerItem" href={url}>
