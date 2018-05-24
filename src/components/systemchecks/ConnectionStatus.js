@@ -8,17 +8,26 @@ class ConnectionStatus extends React.Component {
     this.changeState({ isConnected: 'unknown' });
   }
 
+  checkIsConnected() {
+    this.changeState({ isConnected: getWeb3().isConnected().toString() });
+  }
+
+  changeState(values) {
+    transientState = Object.assign(transientState, values);
+    this.setState(transientState);
+  }
+
   render() {
     let connectionStatusClass;
     switch (this.state.isConnected) {
-      case 'true':
-        connectionStatusClass = 'alert alert-success';
-        break;
-      case 'false':
-        connectionStatusClass = 'alert alert-danger';
-        break;
-      default:
-        connectionStatusClass = 'alert alert-secondary';
+    case 'true':
+      connectionStatusClass = 'alert alert-success';
+      break;
+    case 'false':
+      connectionStatusClass = 'alert alert-danger';
+      break;
+    default:
+      connectionStatusClass = 'alert alert-secondary';
     }
     return (
       <div>
@@ -27,15 +36,6 @@ class ConnectionStatus extends React.Component {
         <span className={connectionStatusClass} role="alert">{this.state.isConnected}</span>
       </div>
     );
-  }
-
-  checkIsConnected(e) {
-    this.changeState({ isConnected: getWeb3().isConnected().toString() });
-  }
-
-  changeState(values) {
-    transientState = Object.assign(transientState, values);
-    this.setState(transientState);
   }
 }
 

@@ -4,9 +4,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import {
-  Container,
-} from 'reactstrap';
+import { Container } from 'reactstrap';
 import './App.css';
 import DApps from './components/DApps.js';
 import DAppsCategory from './components/DAppsCategory.js';
@@ -14,10 +12,17 @@ import ContactUs from './components/ContactUs.js';
 import GetEther from './dapps/GetEther/index';
 import SandBox from './components/Sandbox';
 
+const DAppsCategoryComponent = ({ match }) => (
+  <div>
+    <DAppsCategory id={match.params.id} />
+  </div>
+);
+
+const SystemChecks = () => (
+  <div><SandBox /></div>
+);
 
 class ModalSwitch extends React.Component {
-  previousLocation = this.props.location;
-
   componentWillUpdate(nextProps) {
     const { location } = this.props;
 
@@ -28,6 +33,8 @@ class ModalSwitch extends React.Component {
       this.previousLocation = this.props.location;
     }
   }
+
+  previousLocation = this.props.location;
 
   render() {
     const { location } = this.props;
@@ -40,33 +47,22 @@ class ModalSwitch extends React.Component {
       <div>
         <Container>
           <Switch location={isModal ? this.previousLocation : location}>
-            <Route exact path='/' component={DApps}/>
-            <Route path='/sandbox' component={SystemChecks}/>
-            <Route path='/category/:id' component={DAppsCategoryComponent} />
-            <Route path='/contact-us' component={ContactUs} />
-            <Route path='/ether' component={GetEther} />
+            <Route exact path="/" component={DApps} />
+            <Route path="/sandbox" component={SystemChecks} />
+            <Route path="/category/:id" component={DAppsCategoryComponent} />
+            <Route path="/contact-us" component={ContactUs} />
+            <Route path="/ether" component={GetEther} />
           </Switch>
         </Container>
       </div>
-    )
+    );
   }
 }
-
-const DAppsCategoryComponent = ({ match }) => (
-  <div>
-    <DAppsCategory id={match.params.id}>
-    </DAppsCategory>
-  </div>
-)
-
-const SystemChecks = () => (
-  <div><SandBox /></div>
-)
 
 const App = () => (
   <Router>
     <Route component={ModalSwitch} />
   </Router>
-)
+);
 
-export default App
+export default App;

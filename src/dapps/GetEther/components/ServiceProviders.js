@@ -8,7 +8,7 @@ export default [
     // ]),
     supportAll: true,
     url: function url(address) {
-      return `https://buy.coinbase.com/widget?code=88d6141a-ff60-536c-841c-8f830adaacfd&crypto_currency=ETH&address=${  address}`;
+      return `https://buy.coinbase.com/widget?code=88d6141a-ff60-536c-841c-8f830adaacfd&crypto_currency=ETH&address=${address}`;
     },
     fees: 'up to ~4%',
     limits: 'Varies',
@@ -23,16 +23,15 @@ export default [
     // countries: new Set([
     //     "US", "CA"
     // ]),
-    ignoredCountries: new Set(['US']),
     supportAll: true,
     url(address) {
-      return 'https://changelly.com/widget/v1?auth=email&from=USD&to=ETH&merchant_id=968d4f0f0bf9&ref_id=968d4f0f0bf9&color=00cf70&address=' + address;
+      return `https://changelly.com/widget/v1?auth=email&from=USD&to=ETH&merchant_id=968d4f0f0bf9&ref_id=968d4f0f0bf9&color=00cf70&address=${address}`;
     },
     fees: 'up to ~5%',
     limits: 'Varies',
     delivery: 'Immediate',
     networks: new Set([1]),
-    ignoredCountries: new Set([]),
+    ignoredCountries: new Set(['US']),
   },
   {
     name: 'Indacoin',
@@ -43,7 +42,7 @@ export default [
     // ]),
     supportAll: true,
     url(address) {
-      return 'https://indacoin.com/gw/payment_form?partner=trustwallet&cur_to=ETH&amount=100&cur_from=USD&address=' + address;
+      return `https://indacoin.com/gw/payment_form?partner=trustwallet&cur_to=ETH&amount=100&cur_from=USD&address=${address}`;
     },
     fees: 'up to ~10%',
     limits: 'Varies',
@@ -59,7 +58,7 @@ export default [
     //     "US", "CA"
     // ]),
     supportAll: true,
-    url(address) {
+    url() {
       return 'http://faucet.ropsten.be:3001/';
     },
     fees: 'Free',
@@ -73,7 +72,7 @@ export default [
     description: '',
     image: 'https://res.cloudinary.com/djb6n1qih/image/upload/c_scale,h_128,w_128/v1524225248/ethereum.png',
     supportAll: true,
-    url(address) {
+    url() {
       return 'https://faucet.rinkeby.io/';
     },
     fees: 'Free',
@@ -87,7 +86,7 @@ export default [
     description: '',
     image: 'https://res.cloudinary.com/djb6n1qih/image/upload/c_scale,h_128,w_128/v1524225248/ethereum.png',
     supportAll: true,
-    url(address) {
+    url() {
       return 'https://faucet-sokol.herokuapp.com/';
     },
     fees: 'Free',
@@ -101,7 +100,7 @@ export default [
     description: 'Manual verification',
     image: 'https://res.cloudinary.com/djb6n1qih/image/upload/c_scale,h_128,w_128/v1524225248/ethereum.png',
     supportAll: true,
-    url(address) {
+    url() {
       return 'https://gitter.im/kovan-testnet/faucet';
     },
     fees: 'Free',

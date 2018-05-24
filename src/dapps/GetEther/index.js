@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../App.css';
 import axios from 'axios';
+import '../../App.css';
 import ProviderItems from './components/ProviderItems';
 import getWeb3 from '../../utils/provider';
 import ServiceProviders from './components/ServiceProviders';
@@ -11,17 +11,49 @@ class DApps extends React.Component {
     this.state = { loading: true };
   }
 
+  componentWillMount() {
+    this.fetch();
+  }
+
   fetch() {
     axios.get('https://api.ipdata.co/').then((response) => {
       this.setState({
         loading: false,
-        country_code: response.data.country_code,
+        countryCode: response.data.countryCode,
       });
     });
   }
 
-  componentWillMount() {
-    this.fetch();
+  content() {
+    const countryCode = this.state.countryCode;
+    const address = getWeb3().eth.accounts[0];
+    const network = parseInt(getWeb3().version.network, 10);
+    if (this.state.loading) {
+      return (
+        <div>
+            Loading all the things
+        </div>
+      );
+    }
+    const providers = ServiceProviders.filter(provider => provider.networks.has(network) && !provider.ignoredCountries.has(countryCode));
+    if (!address) {
+      return (
+        <div>
+            No wallet address provided or not supported network!
+        </div>
+      );
+    } else if (providers.length > 0) {
+      return (
+        <div>
+          <ProviderItems items={providers} address={address} />
+        </div>
+      );
+    }
+    return (
+      <div>
+        No providers supported in your country: {countryCode}
+      </div>
+    );
   }
 
   render() {
@@ -34,38 +66,6 @@ class DApps extends React.Component {
           <p className="media-body center">This provider list is made for your convenience only. By proceeding you are agreeing to take full responsibility for the transaction and to the fact that Trust Wallet is not accountable for any issues that result in full or partial loss of any digital assets.</p>
         </center>
       </div>
-    );
-  }
-
-  content() {
-    const country_code = this.state.country_code;
-    const address = getWeb3().eth.accounts[0];
-    const network = parseInt(getWeb3().version.network, 10);
-    if (this.state.loading) {
-      return (
-        <div>
-            Loading all the things
-        </div>
-      );
-    }
-    const providers = ServiceProviders.filter(provider => provider.networks.has(network) && !provider.ignoredCountries.has(country_code));
-    if (!address) {
-      return (
-        <div>
-            No wallet address provided or not supported network!
-        </div>
-      );
-    } else if (providers.length > 0) {
-      return (
-        <div>
-            <ProviderItems items={providers} address={address} />
-        </div>
-      );
-    }
-    return (
-        <div>
-            No providers supported in your country: {country_code}
-        </div>
     );
   }
 }
