@@ -208,7 +208,7 @@ a.media-left.media-bottom {
 }
 
 .card-body-title {
-  padding-top: 3px;
+  padding-top: 1px;
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 22px;
@@ -217,7 +217,7 @@ a.media-left.media-bottom {
 }
 
 .card-body-description{
-  margin: -20px 4px 4px 4px;
+  margin: -23px 4px 4px 4px;
   line-height: 12px;
   border-radius: 10px;
   text-align: center;
