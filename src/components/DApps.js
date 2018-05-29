@@ -26,21 +26,28 @@ class DApps extends React.Component {
 
   render() {
     const elements = this.state.data || [];
-    const sliderElements = elements.filter((item) => {
-      if (item.category.name.toLowerCase() === 'new dapps') {
-        return item;
-      }
+    const newDApp = elements.filter((item) => {
+      if (item.category.name.toLowerCase() === 'new dapps') { return item; }
+      return null;
+    });
+    const othersDApp = elements.filter((item) => {
+      if (item.category.name.toLowerCase() !== 'new dapps') { return item; }
+      return null;
     });
     return (
       <div>
-        <div className="TopSlider">
-          <h4>New DApps</h4>
-          {sliderElements.map((element, index) => (
-            <DAppTopCards key={element} items={element.results} />
+        <div className="CardSlider">
+          {newDApp.map(element => (
+            <div key={element.category._id}>
+              <Link to={`category/${element.category._id}`}>
+                <h2 className="categories">{element.category.name}</h2>
+              </Link>
+              <DAppTopCards key={element} items={element.results} />
+            </div>
           ))}
         </div>
         <div className="DApps">
-          {elements.map(element => (
+          {othersDApp.map(element => (
             <div key={element.category._id}>
               <Link to={`category/${element.category._id}`}>
                 <h2 className="categories">{element.category.name}</h2>

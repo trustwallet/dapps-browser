@@ -190,40 +190,37 @@ a.media-left.media-bottom {
     flex-grow: 0;
     padding: 0;
     box-shadow: 2px 2px 40px -12px #999;
-    border: 1px solid #f4f4f4;
-    width: 250px;
-    height: 200px;
+    border: 0px solid #f4f4f4;
+    width: 150px;
+    height: 215px;
     border-radius: 8px;
     margin-top:10px;
     margin-left: 10px;
-    margin-right: 30px;
+    margin-right: 20px;
     margin-bottom: 14px;
 }
 
 .media-card-logo {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  height: 70%;
-}
-
-.TopSlider {
-  margin-top: 10px;
+  height: 65%;
 }
 
 .card-body-title {
-  padding-top: 0px;
+  padding-top: 3px;
   font-size: 14px;
-  margin-bottom: 21px;
+  font-weight: 600;
+  margin-bottom: 22px;
   text-align: center;
   color: #233240;
 }
 
 .card-body-description{
   margin: -20px 4px 4px 4px;
-  line-height: 14px;
+  line-height: 12px;
   border-radius: 10px;
   text-align: center;
-  font-size: 12px;
+  font-size: 11.8px;
   color: rgba(44,62,80,0.6);
 }
