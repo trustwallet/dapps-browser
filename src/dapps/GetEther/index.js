@@ -35,7 +35,7 @@ class DApps extends React.Component {
         </div>
       );
     }
-    const providers = ServiceProviders.filter(provider => provider.networks.has(network) && !provider.ignoredCountries.has(countryCode))
+    const providers = ServiceProviders.filter(provider => provider.networks.has(network) && !provider.ignoredCountries.has(countryCode));
     if (!address) {
       return (
         <div>
