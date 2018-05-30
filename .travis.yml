@@ -4,6 +4,8 @@ node_js:
 cache:
   directories:
   - node_modules
+before_install:
+  - sudo apt-get update -qq
 script:
   - npm test
   - npm run build
