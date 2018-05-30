@@ -171,33 +171,34 @@ a.media-left.media-bottom {
   padding: 15px;
 }
 
-/* Top Card grid style 
- 
-*/
 .cards-row {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   margin-top: 10px;
   margin-bottom: -15px;
- 
 }
 
-.cards-row::-webkit-scrollbar { width: 0; }
+.cards-row::-webkit-scrollbar {
+  width: 0;
+}
 
 .card-body {
-    flex-shrink: 0;
-    flex-grow: 0;
-    padding: 0;
-    box-shadow: 2px 2px 40px -12px #999;
-    border: 0px solid #f4f4f4;
-    width: 150px;
-    height: 215px;
-    border-radius: 8px;
-    margin-top:10px;
-    margin-left: 10px;
-    margin-right: 20px;
-    margin-bottom: 14px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 0;
+  box-shadow: 0px 0px 42px -18px;
+  -webkit-box-shadow: 0px 0px 3px -0.3px #999;
+  -moz-box-shadow: 0px 0px 3px -0.3px #999;
+  box-shadow: 0px 0px 3px -0.3px #999;
+  border: 0px solid #f4f4f4;
+  width: 150px;
+  height: 215px;
+  border-radius: 8px;
+  margin-top:10px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-bottom: 14px;
 }
 
 .media-card-logo {
