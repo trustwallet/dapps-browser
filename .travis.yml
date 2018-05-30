@@ -14,3 +14,6 @@ deploy:
   local_dir: build
   on:
     branch: master
+addons:
+  apt:
+    update: true
