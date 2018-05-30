@@ -170,3 +170,57 @@ a.media-left.media-bottom {
   color: dodgerblue;
   padding: 15px;
 }
+
+/* Top Card grid style 
+ 
+*/
+.cards-row {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  margin-top: 10px;
+  margin-bottom: -15px;
+ 
+}
+
+.cards-row::-webkit-scrollbar { width: 0; }
+
+.card-body {
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 0;
+    box-shadow: 2px 2px 40px -12px #999;
+    border: 0px solid #f4f4f4;
+    width: 150px;
+    height: 215px;
+    border-radius: 8px;
+    margin-top:10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 14px;
+}
+
+.media-card-logo {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  width: 100%;
+  height: 65%;
+}
+
+.card-body-title {
+  padding-top: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 22px;
+  text-align: center;
+  color: #233240;
+}
+
+.card-body-description{
+  margin: -23px 4px 4px 4px;
+  line-height: 13px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 11.8px;
+  color: rgba(44,62,80,0.6);
+}

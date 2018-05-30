@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import DAppItems from './DAppItems';
+import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import getWeb3 from '../utils/provider';
 
@@ -25,10 +26,27 @@ class DApps extends React.Component {
 
   render() {
     const elements = this.state.data || [];
+    const categoryID = '5abcceb4682db901241a0636';
+    const newDApp = elements.filter((item) => {
+      return item.category._id === categoryID;
+    });
+    const othersDApp = elements.filter((item) => {
+      return item.category._id !== categoryID;
+    });
     return (
       <div>
+        <div className="CardSlider">
+          {newDApp.map(element => (
+            <div key={element.category._id}>
+              <Link to={`category/${element.category._id}`}>
+                <h2 className="categories">{element.category.name}</h2>
+              </Link>
+              <DAppTopCards key={element} items={element.results} />
+            </div>
+          ))}
+        </div>
         <div className="DApps">
-          {elements.map(element => (
+          {othersDApp.map(element => (
             <div key={element.category._id}>
               <Link to={`category/${element.category._id}`}>
                 <h2 className="categories">{element.category.name}</h2>
