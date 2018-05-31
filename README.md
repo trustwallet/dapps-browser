@@ -1,8 +1,6 @@
 # dapps-browser
 DApps browser
 
-[![Build Status](https://travis-ci.org/TrustWallet/dapps-browser.svg?branch=master)](https://travis-ci.org/TrustWallet/dapps-browser)
-
 ## Get Started
 ```
 git clone https://github.com/TrustWallet/dapps-browser.git
@@ -12,7 +10,8 @@ npm start
 ```
 
 ## Deployment
-Continuous deployment with [Travis CI](https://travis-ci.org/TrustWallet/dapps-browser)
+Automatic deploys from `master` using Heroku
+> Every push to master will deploy a new version of this app. Deploys happen automatically: be sure that this branch in GitHub is always in a deployable state and any tests have passed before you push.
 
 ## ESLint
 Run `npm run lint` for ESLint<br/>
