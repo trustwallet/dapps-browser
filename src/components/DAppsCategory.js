@@ -3,6 +3,7 @@ import '../App.css';
 import DAppItems from './DAppItems';
 import { TrustClient } from '../network/TrustClient';
 import getWeb3 from '../utils/provider';
+import { osName } from "react-device-detect";
 
 class DAppsCategory extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class DAppsCategory extends React.Component {
 
   fetch() {
     const network = parseInt(getWeb3().version.network, 10);
-    this.trustClient.fetchDAppsByCategoryID(this.props.id, network).then((response) => {
+    this.trustClient.fetchDAppsByCategoryID(this.props.id, network, osName).then((response) => {
       const list = response.data.docs;
       const category = response.data.category;
       this.setState({

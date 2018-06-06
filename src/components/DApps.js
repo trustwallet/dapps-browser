@@ -5,6 +5,7 @@ import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import getWeb3 from '../utils/provider';
+import { osName } from "react-device-detect";
 
 class DApps extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class DApps extends React.Component {
 
   fetch() {
     const network = parseInt(getWeb3().version.network, 10);
-    this.trustClient.fetchBootstrap(network).then((response) => {
+    this.trustClient.fetchBootstrap(network, osName).then((response) => {
       this.setState({ data: response.data.docs });
     });
   }
