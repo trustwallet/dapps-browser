@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { osName } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import getWeb3 from '../utils/provider';
-import { osName } from "react-device-detect";
 
 class DApps extends React.Component {
   constructor(props) {

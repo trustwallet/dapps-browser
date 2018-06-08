@@ -1,9 +1,9 @@
 import React from 'react';
+import { osName } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import { TrustClient } from '../network/TrustClient';
 import getWeb3 from '../utils/provider';
-import { osName } from "react-device-detect";
 
 class DAppsCategory extends React.Component {
   constructor(props) {
