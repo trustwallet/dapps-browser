@@ -203,8 +203,8 @@ a.media-left.media-bottom {
 .media-card-logo {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  width: 100%;
-  height: 65%;
+  width: 150px;
+  height: 150px;
 }
 
 .card-body-title {
