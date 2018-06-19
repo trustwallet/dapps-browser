@@ -12,7 +12,7 @@ class DApps extends React.Component {
   }
 
   componentWillMount() {
-    this.fetch();
+    //this.fetch();
   }
 
   fetch() {
@@ -25,7 +25,6 @@ class DApps extends React.Component {
   }
 
   content() {
-    const countryCode = this.state.countryCode;
     const address = getWeb3().eth.accounts[0];
     const network = parseInt(getWeb3().version.network, 10);
     if (this.state.loading) {
@@ -35,7 +34,7 @@ class DApps extends React.Component {
         </div>
       );
     }
-    const providers = ServiceProviders.filter(provider => provider.networks.has(network) && !provider.ignoredCountries.has(countryCode));
+    const providers = ServiceProviders.filter(provider => provider.networks.has(network));
     if (!address) {
       return (
         <div>
@@ -51,7 +50,7 @@ class DApps extends React.Component {
     }
     return (
       <div>
-        No providers supported in your country: {countryCode}
+        No providers supported in your country!
       </div>
     );
   }
