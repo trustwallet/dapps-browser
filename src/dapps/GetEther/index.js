@@ -8,7 +8,7 @@ import ServiceProviders from './components/ServiceProviders';
 class DApps extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true };
+    //this.state = { loading: false };
   }
 
   componentWillMount() {
