@@ -18,11 +18,10 @@ class DApps extends React.Component {
     this.fetch();
   }
 
-  fetch() {
-    const network = parseInt(getWeb3().version.network, 10);
-    this.trustClient.fetchBootstrap(network, osName).then((response) => {
-      this.setState({ data: response.data.docs });
-    });
+  async fetch() {
+    const network = parseInt(await getWeb3().version.network, 10);
+    const dappsList = await this.trustClient.fetchBootstrap(network, osName)
+    this.setState({ data: dappsList.data.docs });
   }
 
   render() {
