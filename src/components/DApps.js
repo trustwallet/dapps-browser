@@ -26,6 +26,14 @@ class DApps extends React.Component {
   }
 
   render() {
+    if (osName === "iOS") {
+      return (
+        <div className="center-parent">
+          Browser for DApps.
+        </div>
+      )
+    }
+
     const elements = this.state.data || [];
     const categoryID = '5abcceb4682db901241a0636';
     const newDApp = elements.filter((item) => {
