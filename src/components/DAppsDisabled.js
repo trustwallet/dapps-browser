@@ -5,7 +5,7 @@ class DAppsDisabled extends React.Component {
     return (
         <div className="center-parent">
           Browser for DApps.
-          <br />
+          <br /> <br />
           Bookmark favorite DApps to have quick access to them.
         </div>
       )
