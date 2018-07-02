@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { osName } from 'react-device-detect';
+import { osName, isIOS } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
@@ -27,7 +27,7 @@ class DApps extends React.Component {
   }
 
   render() {
-    if (osName === "iOS") {
+    if (isIOS) {
       return (
         <DAppsDisabled />
       )
