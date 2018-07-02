@@ -5,11 +5,10 @@ class DAppsDisabled extends React.Component {
     return (
         <div className="center-parent">
           <center>
-            Browser for DApps.
+            Web3 DApp Browser
             <br /> 
             <br />
             <br />
-
             Bookmark favorite DApps to have quick access.
           </center>
         </div>
