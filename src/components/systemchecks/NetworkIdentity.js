@@ -1,5 +1,4 @@
 import React from 'react';
-import getWeb3 from '../../utils/provider';
 import networks from '../../networks';
 import { TrustWeb3 } from "../../network/TrustWeb3";
 

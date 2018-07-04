@@ -6,7 +6,6 @@ import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import { TrustWeb3 } from "../network/TrustWeb3";
-import getWeb3 from '../utils/provider';
 
 class DApps extends React.Component {
   constructor(props) {
