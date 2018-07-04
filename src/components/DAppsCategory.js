@@ -4,7 +4,6 @@ import '../App.css';
 import DAppItems from './DAppItems';
 import { TrustClient } from '../network/TrustClient';
 import { TrustWeb3 } from "../network/TrustWeb3";
-import getWeb3 from '../utils/provider';
 
 class DAppsCategory extends React.Component {
   constructor(props) {
