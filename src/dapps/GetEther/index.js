@@ -4,11 +4,13 @@ import '../../App.css';
 import ProviderItems from './components/ProviderItems';
 import getWeb3 from '../../utils/provider';
 import ServiceProviders from './components/ServiceProviders';
+import { TrustWeb3 } from "../../network/TrustWeb3";
 
 class DApps extends React.Component {
   constructor(props) {
     super(props);
     this.state = { loading: false };
+    this.trustWeb3 = new TrustWeb3(); 
   }
 
   componentWillMount() {
@@ -24,35 +26,40 @@ class DApps extends React.Component {
     });
   }
 
-  content() {
-    const address = getWeb3().eth.accounts[0];
-    const network = parseInt(getWeb3().version.network, 10);
-    if (this.state.loading) {
+  async content() {
+    try {
+      const address = await this.trustWeb3.getAddress()
+      const network = await this.trustWeb3.getNetwork()
+  
+      if (this.state.loading) {
+        return (
+          <div>
+              Loading all the things
+          </div>
+        );
+      }
+      const providers = ServiceProviders.filter(provider => provider.networks.has(network));
+      if (!address) {
+        return (
+          <div>
+              No wallet address provided or not supported network!
+          </div>
+        );
+      } else if (providers.length > 0) {
+        return (
+          <div>
+            <ProviderItems items={providers} address={address} />
+          </div>
+        );
+      }
       return (
         <div>
-            Loading all the things
+          No providers supported in your country!
         </div>
       );
+    } catch (error) {
+      console.log(`Error content() `, error)
     }
-    const providers = ServiceProviders.filter(provider => provider.networks.has(network));
-    if (!address) {
-      return (
-        <div>
-            No wallet address provided or not supported network!
-        </div>
-      );
-    } else if (providers.length > 0) {
-      return (
-        <div>
-          <ProviderItems items={providers} address={address} />
-        </div>
-      );
-    }
-    return (
-      <div>
-        No providers supported in your country!
-      </div>
-    );
   }
 
   render() {
