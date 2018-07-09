@@ -7,7 +7,7 @@ import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import { TrustWeb3 } from "../network/TrustWeb3";
 import DAppsDisabled from './DAppsDisabled';
-
+import { getTrsutBrowserVersion } from "../components/systemchecks/BrowserVersion";
 class DApps extends React.Component {
   constructor(props) {
     super(props);
@@ -31,12 +31,12 @@ class DApps extends React.Component {
   }
 
   render() {
-    if (isIOS) {
+    const browserVersion = getTrsutBrowserVersion()
+    if (browserVersion >= 1.68 && isIOS) {
       return (
         <DAppsDisabled />
       )
     }
-
     const elements = this.state.data || [];
     const categoryID = '5abcceb4682db901241a0636';
     const newDApp = elements.filter((item) => {
