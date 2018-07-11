@@ -19,7 +19,7 @@ class DApps extends React.Component {
     this.fetch();
   }
 
-  async fetch() {
+  fetch = async() => {
     try {
       const networkId = await this.trustWeb3.getNetwork();
       const bootstrap = await this.trustClient.fetchBootstrap(networkId, osName);
