@@ -6,6 +6,7 @@ import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import { TrustWeb3 } from "../network/TrustWeb3";
+import DAppsDisabled from './DAppsDisabled';
 
 class DApps extends React.Component {
   constructor(props) {
@@ -32,9 +33,7 @@ class DApps extends React.Component {
   render() {
     if (osName === "iOS") {
       return (
-        <div className="center-parent">
-          Browser for DApps.
-        </div>
+        <DAppsDisabled />
       )
     }
 
