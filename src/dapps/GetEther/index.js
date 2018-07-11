@@ -17,11 +17,11 @@ class DApps extends React.Component {
   }
 
   componentDidMount() {
-    this.content()
+    this.content();
   }
 
   async setStateAsync(state) {
-    await this.setState(state)
+    await this.setState(state);
   }
 
   fetch() {
@@ -36,9 +36,10 @@ class DApps extends React.Component {
 
    content = async() => {
     try {
-      const address = await this.trustWeb3.getAddress()
-      const network = await this.trustWeb3.getNetwork()
-      console.log('ETH', {address}, {network})
+      const address = await this.trustWeb3.getAddress();
+      const network = await this.trustWeb3.getNetwork();
+
+      console.log('ETH', {address}, {network});
       if (this.state.loading) {
         return (
           <div>
@@ -49,7 +50,7 @@ class DApps extends React.Component {
       const providers = ServiceProviders.filter(provider => provider.networks.has(network));
 
       if (!address) {
-        const content = <div> No wallet address provided or not supported network!</div>
+        const content = <div>No wallet address provided or not supported network!</div>
         return await this.setStateAsync({content})
         
       } else if (providers.length > 0) {
