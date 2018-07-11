@@ -5,24 +5,28 @@ import '../App.css';
 import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
-import getWeb3 from '../utils/provider';
+import { TrustWeb3 } from "../network/TrustWeb3";
 
 class DApps extends React.Component {
   constructor(props) {
     super(props);
     this.state = { data: [] };
     this.trustClient = new TrustClient();
+    this.trustWeb3 = new TrustWeb3();
   }
 
   componentWillMount() {
     this.fetch();
   }
 
-  fetch() {
-    const network = parseInt(getWeb3().version.network, 10);
-    this.trustClient.fetchBootstrap(network, osName).then((response) => {
-      this.setState({ data: response.data.docs });
-    });
+  fetch = async() => {
+    try {
+      const networkId = await this.trustWeb3.getNetwork();
+      const bootstrap = await this.trustClient.fetchBootstrap(networkId, osName);
+      this.setState({ data: bootstrap.data.docs });
+    } catch (error) {
+      console.log(`Error at fetch()`, error)
+    }
   }
 
   render() {

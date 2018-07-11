@@ -3,14 +3,14 @@ import { osName } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import { TrustClient } from '../network/TrustClient';
-import getWeb3 from '../utils/provider';
+import { TrustWeb3 } from "../network/TrustWeb3";
 
 class DAppsCategory extends React.Component {
   constructor(props) {
     super(props);
     this.state = { list: [], category: {} };
     this.trustClient = new TrustClient();
-
+    this.trustWeb3 = new TrustWeb3();
     console.log(props);
   }
 
@@ -18,16 +18,17 @@ class DAppsCategory extends React.Component {
     this.fetch();
   }
 
-  fetch() {
-    const network = parseInt(getWeb3().version.network, 10);
-    this.trustClient.fetchDAppsByCategoryID(this.props.id, network, osName).then((response) => {
-      const list = response.data.docs;
-      const category = response.data.category;
-      this.setState({
-        category,
-        list,
-      });
-    });
+  async fetch() {
+    try {
+      const network = await this.trustWeb3.getNetwork();
+      const dapps = await this.trustClient.fetchDAppsByCategoryID(this.props.id, network, osName)
+      const list = dapps.data.docs;
+      const category = dapps.data.category;
+      
+      this.setState({category, list});
+    } catch (error) {
+      console.log(`Error at fetch() `, error)
+    }
   }
 
   render() {

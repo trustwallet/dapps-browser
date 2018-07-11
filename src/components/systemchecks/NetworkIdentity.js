@@ -1,32 +1,31 @@
 import React from 'react';
-import getWeb3 from '../../utils/provider';
 import networks from '../../networks';
+import { TrustWeb3 } from "../../network/TrustWeb3";
 
 let transientState = {};
 
 class NetworkIdentity extends React.Component {
+  trustWeb3 = new TrustWeb3()
+
   componentWillMount() {
     this.changeState({ networkID: 'unknown' });
   }
 
-  checkID() {
-    getWeb3()
-      .version
-      .getNetwork((error, networkId) => {
-        if (error) {
-          console.log(error);
-          this.changeState({ networkID: 'error' });
-        } else {
-          const network = networks.find(network => network.id === networkId);
-
-          if (network !== undefined) {
-            this.changeState({ networkID: `${network.id} - ${network.name}` });
-          } else {
-            console.log(`couldn't find network in list with networkId of '${networkId}'`);
-            this.changeState({ networkID: `${networkId} - unknown` });
-          }
-        }
-      });
+  checkID = async () => {
+    try {
+      const networkId = await this.trustWeb3.getNetwork();
+      const network = networks.find(network => network.id === networkId);
+  
+      if (network !== undefined) {
+        this.changeState({ networkID: `${network.id} - ${network.name}` });
+      } else {
+        console.log(`couldn't find network in list with networkId of '${networkId}'`);
+        this.changeState({ networkID: `${networkId} - unknown` });
+      }
+    } catch (error) {
+      console.log(`Error checkID()`, error)
+      this.changeState({ networkID: 'error' });
+    }
   }
 
   changeState(values) {
@@ -40,7 +39,7 @@ class NetworkIdentity extends React.Component {
     return (
       <div>
         <h4>Get Network ID</h4>
-        <button onClick={this.checkID.bind(this)}>Check Network ID</button>&nbsp;&nbsp;
+        <button onClick={this.checkID}>Check Network ID</button>&nbsp;&nbsp;
         <span className={networkIdentityClass} role="alert">{this.state.networkID}</span>
       </div>
     );

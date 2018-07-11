@@ -7,9 +7,9 @@ class ProviderItem extends React.Component {
     const url = item.url(this.props.address);
 
     return (
-      <a className="providerItem" href={url}>
+      <Media className="providerItem" tag="a" href={url}>
         <Media className="mt-1 align media-block">
-          <Media left bottom>
+          <Media bottom>
             <img src={item.image} alt="logo" className="media-logo" />
           </Media>
           <Media body>
@@ -30,7 +30,7 @@ class ProviderItem extends React.Component {
             </Media>
           </Media>
         </Media>
-      </a>
+      </Media>
     );
   }
 }
