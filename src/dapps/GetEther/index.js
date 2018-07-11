@@ -41,11 +41,7 @@ class DApps extends React.Component {
 
       console.log('ETH', {address}, {network});
       if (this.state.loading) {
-        return (
-          <div>
-              Loading all the things
-          </div>
-        );
+        return (<div>Loading all the things</div>);
       }
       const providers = ServiceProviders.filter(provider => provider.networks.has(network));
 
