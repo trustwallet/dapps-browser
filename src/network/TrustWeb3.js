@@ -7,7 +7,7 @@ export class TrustWeb3 {
         this.web3 = getWeb3()
     }
 
-    getNetwork() {
+    getNetwork = () => {
         return new Promise((resolve, reject) => {
             this.web3.version.getNetwork((err, networkId) => {
                 if (err) {
@@ -18,7 +18,7 @@ export class TrustWeb3 {
         })
     }
 
-    getAddress() {
+    getAddress = () => {
         return new Promise((resolve, reject) => {
             this.web3.eth.getAccounts((err, accounts) => {
                 if (err) {
@@ -28,4 +28,5 @@ export class TrustWeb3 {
             })
         })
     }
+
 }

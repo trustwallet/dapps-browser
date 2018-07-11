@@ -8,7 +8,7 @@ class ConnectionStatus extends React.Component {
     this.changeState({ isConnected: 'unknown' });
   }
 
-  checkIsConnected() {
+  checkIsConnected = () => {
     this.changeState({ isConnected: getWeb3().isConnected().toString() });
   }
 
@@ -32,7 +32,7 @@ class ConnectionStatus extends React.Component {
     return (
       <div>
         <h4>Is Connected</h4>
-        <button onClick={this.checkIsConnected.bind(this)}>Check Status</button>&nbsp;&nbsp;
+        <button onClick={this.checkIsConnected}>Check Status</button>&nbsp;&nbsp;
         <span className={connectionStatusClass} role="alert">{this.state.isConnected}</span>
       </div>
     );

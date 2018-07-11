@@ -11,7 +11,7 @@ class NetworkIdentity extends React.Component {
     this.changeState({ networkID: 'unknown' });
   }
 
-  async checkID() {
+  checkID = async () => {
     try {
       const networkId = await this.trustWeb3.getNetwork();
       const network = networks.find(network => network.id === networkId);
@@ -39,7 +39,7 @@ class NetworkIdentity extends React.Component {
     return (
       <div>
         <h4>Get Network ID</h4>
-        <button onClick={this.checkID.bind(this)}>Check Network ID</button>&nbsp;&nbsp;
+        <button onClick={this.checkID}>Check Network ID</button>&nbsp;&nbsp;
         <span className={networkIdentityClass} role="alert">{this.state.networkID}</span>
       </div>
     );
