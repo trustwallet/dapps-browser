@@ -32,7 +32,7 @@ class DApps extends React.Component {
 
   render() {
     const browserVersion = getTrsutBrowserVersion()
-    if (browserVersion >= 1.80 && isIOS) {
+    if (browserVersion >= 1.91 && isIOS) {
       return (
         <DAppsDisabled />
       )
