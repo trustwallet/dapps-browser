@@ -6,7 +6,6 @@ class DAppCard extends React.Component {
   render() {
     const item = this.props.item;
     const url = item.url;
-    console.log({item})
     return (
       <Media tag="a" href={url}>
         <div className="card-body">
