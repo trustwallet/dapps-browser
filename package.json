@@ -14,6 +14,10 @@
     "reactstrap": "^5.0.0-alpha.4",
     "web3": "^0.20.4"
   },
+  "engines": {
+    "node": "9.5.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "start": "react-scripts start",
