@@ -15,8 +15,8 @@
     "web3": "^0.20.4"
   },
   "engines": {
-    "node": "9.5.0",
-    "npm": "5.6.0"
+    "node": "10.12.0",
+    "npm": "6.4.1"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -28,6 +28,5 @@
   "devDependencies": {
     "gh-pages": "^1.1.0"
   },
-  "browserslist": [
-  ]
+  "browserslist": []
 }
