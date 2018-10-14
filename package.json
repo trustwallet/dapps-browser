@@ -27,5 +27,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.1.0"
-  }
+  },
+  "browserslist": [
+  ]
 }
