@@ -10,18 +10,28 @@
     "react-device-detect": "^1.3.4",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.0",
+    "react-scripts": "2.0.4",
     "reactstrap": "^5.0.0-alpha.4",
     "web3": "^0.20.4"
+  },
+  "engines": {
+    "node": "10.12.0",
+    "npm": "6.4.1"
   },
   "scripts": {
     "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "lint": "eslint src",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
     "gh-pages": "^1.1.0"
-  }
+  },
+  "browserslist": []
 }
