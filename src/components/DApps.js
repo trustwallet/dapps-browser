@@ -39,12 +39,8 @@ class DApps extends React.Component {
     }
     const elements = this.state.data || [];
     const categoryID = '5abcceb4682db901241a0636';
-    const newDApp = elements.filter((item) => {
-      return item.category._id === categoryID;
-    });
-    const othersDApp = elements.filter((item) => {
-      return item.category._id !== categoryID;
-    });
+    const newDApp = elements.filter(item => item.category._id === categoryID);
+    const othersDApp = elements.filter(item => item.category._id !== categoryID);
 
     return (
       <div>
