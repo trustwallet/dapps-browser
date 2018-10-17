@@ -45,6 +45,7 @@ class DApps extends React.Component {
     const othersDApp = elements.filter((item) => {
       return item.category._id !== categoryID;
     });
+
     return (
       <div>
         <div className="CardSlider">
@@ -60,7 +61,7 @@ class DApps extends React.Component {
         <div className="DApps">
           {othersDApp.map(element => (
             <div key={element.category._id}>
-              <Link to={`category/${element.category._id}`}>
+              <Link to={`category/${element.category._id}`} >
                 <h2 className="categories">{element.category.name}</h2>
               </Link>
               <DAppItems key={element} items={element.results} />
