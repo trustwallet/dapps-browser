@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://trust-api.herokuapp.com';
+const url = 'https://public.trustwalletapp.com';
 
 export class TrustClient {
   fetchDAppsByCategoryID(id, network, os) {
