@@ -8,15 +8,10 @@ import { Container } from 'reactstrap';
 import './App.css';
 import DApps from './components/DApps.js';
 import DAppsCategory from './components/DAppsCategory.js';
+import DAppPage from './components/DAppPage';
 import ContactUs from './components/ContactUs.js';
 import GetEther from './dapps/GetEther/index';
 import SandBox from './components/Sandbox';
-
-const DAppsCategoryComponent = ({ match }) => (
-  <div>
-    <DAppsCategory id={match.params.id} />
-  </div>
-);
 
 const SystemChecks = () => (
   <div><SandBox /></div>
@@ -49,7 +44,8 @@ class ModalSwitch extends React.Component {
           <Switch location={isModal ? this.previousLocation : location}>
             <Route exact path="/" component={DApps} />
             <Route path="/sandbox" component={SystemChecks} />
-            <Route path="/category/:id" component={DAppsCategoryComponent} />
+            <Route path="/category/:id" component={DAppsCategory} />
+            <Route path="/:dapp" component={DAppPage} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/ether" component={GetEther} />
           </Switch>

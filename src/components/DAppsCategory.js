@@ -11,7 +11,7 @@ class DAppsCategory extends React.Component {
     this.state = { list: [], category: {} };
     this.trustClient = new TrustClient();
     this.trustWeb3 = new TrustWeb3();
-    console.log(props);
+    this.id = this.props.match.params.id;
   }
 
   componentWillMount() {
@@ -21,7 +21,7 @@ class DAppsCategory extends React.Component {
   async fetch() {
     try {
       const network = await this.trustWeb3.getNetwork();
-      const dapps = await this.trustClient.fetchDAppsByCategoryID(this.props.id, network, osName)
+      const dapps = await this.trustClient.fetchDAppsByCategoryID(this.id, network, osName)
       const list = dapps.data.docs;
       const category = dapps.data.category;
       
