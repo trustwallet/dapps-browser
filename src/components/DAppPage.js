@@ -9,7 +9,7 @@ class DAppPage extends React.Component {
         return (
             <div>
             <Card>
-              <img width="100%" src={image} />
+              <img width="100%" src={image} alt="DApp page" />
               <CardBody >
                 <CardText>{description}</CardText>
                 <CardLink href="#">Visit DApp</CardLink>
