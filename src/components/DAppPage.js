@@ -1,22 +1,25 @@
 import React from 'react';
-import { Card, CardLink, CardBody, CardText } from "reactstrap";
+import { Card, CardLink, CardBody, CardText, CardImg, Button} from "reactstrap";
 
 class DAppPage extends React.Component {
     render() {
         console.log(this.props)
-        const { description, digitalGood, image, name, url, networks } = this.props.location.state.dapp
+        const { 
+            description, 
+            digitalGood, 
+            image,
+            page_image, 
+            name, 
+            url, 
+            networks } = this.props.location.state.dapp
 
         return (
             <div>
-            <Card>
-              <img width="100%" src={image} alt="DApp page" />
-              <CardBody >
-                <CardText>{description}</CardText>
-                <CardLink href="#">Visit DApp</CardLink>
-              </CardBody>
-            </Card>
-          </div>
-        );
+              <CardImg width="100%" src={page_image ? page_image : image} alt="DApp page"></CardImg>
+              <CardText width="100%" color="danger">{description}</CardText>
+              <Button outline size="sm" color="primary" href={url}>visit {name}</Button>
+            </div>
+        )
     }
 }
 
