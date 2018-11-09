@@ -13,7 +13,7 @@ class DApps extends React.Component {
   }
 
   componentWillMount() {
-    //this.fetch();
+    // this.fetch();
   }
 
   componentDidMount() {
@@ -24,22 +24,21 @@ class DApps extends React.Component {
     await this.setState(state);
   }
 
-  fetch() {
-    axios.get('https://api.ipdata.co/').then((response) => {
-      this.setState({
-        loading: false,
-        countryCode: response.data.countryCode,
-      });
-    });
-  }
+  // fetch() {
+  //   axios.get('https://api.ipdata.co/').then(({data: {countryCode} }) => {
+  //     this.setState({
+  //       loading: false,
+  //       countryCode
+  //     });
+  //   });
+  // }
 
 
-   content = async() => {
+   content = async () => {
     try {
-      const address = await this.trustWeb3.getAddress();
-      const network = await this.trustWeb3.getNetwork();
+      const [address, network ] = await Promise.all([this.trustWeb3.getAddress(), this.trustWeb3.getNetwork()])
 
-      console.log('ETH', {address}, {network});
+      console.log(`ETH address ${address} network ${network}`);
       if (this.state.loading) {
         return (<div>Loading all the things</div>);
       }
