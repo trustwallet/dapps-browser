@@ -20,7 +20,7 @@ function ContactUs() {
       <ListGroupItem>
         <i className="fas fa-envelope fa-2x" />
         <span className="contact-us-div">
-                        Email: support@trustwalletapp.com
+                        Email: support@trustwallet.com
         </span>
       </ListGroupItem>
     </ListGroup>
