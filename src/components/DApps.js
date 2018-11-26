@@ -32,7 +32,7 @@ class DApps extends React.Component {
 
   render() {
     const browserVersion = getTrsutBrowserVersion()
-    if (browserVersion >= 1.694 && isIOS) {
+    if (browserVersion >= 1.846 && isIOS) {
       return (
         <DAppsDisabled />
       )
@@ -45,6 +45,7 @@ class DApps extends React.Component {
     const othersDApp = elements.filter((item) => {
       return item.category._id !== categoryID;
     });
+    console.log(othersDApp)
     return (
       <div>
         <div className="CardSlider">
