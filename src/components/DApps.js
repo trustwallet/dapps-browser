@@ -1,6 +1,9 @@
+// Libs
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { osName, isIOS } from 'react-device-detect';
+// Utils
+import { getNetworkName } from "../utils/utils";
 import '../App.css';
 import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
@@ -8,6 +11,7 @@ import { TrustClient } from '../network/TrustClient';
 import { TrustWeb3 } from "../network/TrustWeb3";
 import DAppsDisabled from './DAppsDisabled';
 import { getTrsutBrowserVersion } from "../components/systemchecks/BrowserVersion";
+
 class DApps extends React.Component {
   constructor(props) {
     super(props);
@@ -22,9 +26,19 @@ class DApps extends React.Component {
 
   fetch = async() => {
     try {
-      const networkId = await this.trustWeb3.getNetwork();
-      const bootstrap = await this.trustClient.fetchBootstrap(networkId, osName);
-      this.setState({ data: bootstrap.data.docs });
+      const [networkId, chainId] = await Promise.all([
+        this.trustWeb3.getNetwork(),
+        this.trustWeb3.getChainID()
+      ])
+      console.log({networkId})
+      console.log({chainId})
+      const { data: {docs} } = await this.trustClient.fetchBootstrap(networkId, osName);
+      this.setState({
+        data: docs,
+        networkId,
+        chainId,
+        networkName: getNetworkName({networkId, chainId}) 
+      });
     } catch (error) {
       console.log(`Error at fetch()`, error)
     }
@@ -45,9 +59,12 @@ class DApps extends React.Component {
     const othersDApp = elements.filter((item) => {
       return item.category._id !== categoryID;
     });
-    console.log(othersDApp)
+
     return (
       <div>
+        <div>
+          <center>{`Your are on ${this.state.networkName} network`}</center>
+        </div>
         <div className="CardSlider">
           {newDApp.map(element => (
             <div key={element.category._id}>
