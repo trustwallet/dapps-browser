@@ -12,6 +12,7 @@ import ContactUs from './components/ContactUs.js';
 import GetEther from './dapps/GetEther/index';
 import BuyCrypto from './dapps/BuyCrypto/index';
 import SandBox from './components/Sandbox';
+import SimplexForm from './dapps/BuyCrypto/simplex';
 
 const DAppsCategoryComponent = ({ match }) => (
   <div>
@@ -53,7 +54,8 @@ class ModalSwitch extends React.Component {
             <Route path="/category/:id" component={DAppsCategoryComponent} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/ether" component={GetEther} />
-            <Route path="/buycrypto" component={BuyCrypto} />
+            <Route path="/buycrypto/simplex" component={SimplexForm} />
+            <Route path="/buycrypto" component={BuyCrypto} /> 
           </Switch>
         </Container>
       </div>
