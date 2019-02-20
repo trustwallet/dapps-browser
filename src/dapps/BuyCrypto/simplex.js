@@ -14,6 +14,23 @@ class SimplexForm extends React.Component {
     this.trustClient = new TrustClient();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+
+    this.getQuoteResponse = {}
+    this.getPaymentResponse = {}
+
+
+    this.walletId = "trustwallet"
+    this.endUserId = this.generateUUID()
+    this.clientIP = "80.250.214.122"
+
+    this.supportedDigitalCurrencies = {
+      "0": "BTC",
+      "145": "BCH",
+      "2": "LTC",
+      "60": "ETH"
+    }
+
+    this.supportedFiatCurrencies = ["USD", "EUR"]
   }
 
   handleInputChange(event) {
@@ -24,32 +41,85 @@ class SimplexForm extends React.Component {
     this.setState({
       [name]: value
     });
+
+    this.setState({
+      [name === "digitalMoney" ? "fiatMoney" : "digitalMoney"]: ""
+    });
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state["digitalMoney"] + "-" + this.state["fiatMoney"]);
+    const fiatMoney = parseFloat(this.state["fiatMoney"]);
+    const digitalMoney = parseFloat(this.state["digitalMoney"]);
+
+    if (isNaN(fiatMoney) && isNaN(digitalMoney)) {
+       return
+    }
 
 
+
+    const query = new URLSearchParams(this.props.location.search);
+    const fiatCurrency = query.get("fiat_currency")
+    const coin = query.get("coin")
+
+    const requestedCurrency = isNaN(fiatMoney) ? this.digitalCurrency(coin) : fiatCurrency
+    const requestedAmount = isNaN(fiatMoney) ? digitalMoney : fiatMoney
+
+
+    console.log("requestedCurrency: ", requestedCurrency);
+    console.log("requestedAmount: ", requestedAmount);
+
+    this.getQuote(requestedCurrency, parseFloat(requestedAmount));
+    event.preventDefault();
+  }
+
+  digitalCurrency(coin) {
+    return coin in this.supportedDigitalCurrencies ? this.supportedDigitalCurrencies[coin] : "BTC";
+  }
+
+  getQuote(requestedCurrency, requestedAmount) {
+    const query = new URLSearchParams(this.props.location.search);
+    const fiatCurrency = query.get("fiat_currency")
+    const coin = query.get("coin")
 
     var postData = {
-         end_user_id: "6a611c36-344f-11e9-b210-d663bd873d93",
-         digital_currency: "BTC",
-         fiat_currency: "USD",
-         requested_currency: "BTC",
-         requested_amount: 0.1,
-         wallet_id: "trustwallet",
-         client_ip: "80.250.214.122"
+      end_user_id: this.endUserId,
+      digital_currency: this.digitalCurrency(coin),
+      fiat_currency: fiatCurrency,
+      requested_currency: requestedCurrency,
+      requested_amount: requestedAmount,
+      wallet_id: this.walletId,
+      client_ip: this.clientIP
     };
+
+    console.log("POST GET QUOTE DATA: ", postData);
 
     this.trustClient.simplexQuote(postData)
     .then((res) => {
       console.log("RESPONSE RECEIVED: ", res.data);
+      this.getQuoteResponse = res.data;
+
+      var updatedState = {
+        digitalMoney: this.getQuoteResponse["digital_money"]["amount"],
+        fiatMoney: this.getQuoteResponse["fiat_money"]["total_amount"]
+      };
+      this.setState(updatedState);
     })
     .catch((err) => {
       console.log("AXIOS ERROR: ", err);
+      alert('Can"t get quoute: ' + err);
     })
+  }
 
-    event.preventDefault();
+  generateUUID() {
+    var result, i, j;
+    result = '';
+    for(j=0; j<32; j++) {
+      if(j === 8 || j === 12 || j === 16 || j === 20) 
+        result = result + '-';
+        i = Math.floor(Math.random()*16).toString(16).toUpperCase();
+        result = result + i;
+      }
+      return result;
   }
 
   render() {
@@ -61,9 +131,9 @@ class SimplexForm extends React.Component {
           <input 
             type="text"
             name="digitalMoney" 
-            value={this.state.value} 
+            value={this.state["digitalMoney"]} 
             onChange={this.handleInputChange} />
-             Field 1
+             Digital Currency
         </label>
         </div>
         <div>
@@ -71,12 +141,12 @@ class SimplexForm extends React.Component {
           <input 
             type="text" 
             name="fiatMoney" 
-            value={this.state.value} 
+            value={this.state["fiatMoney"]} 
             onChange={this.handleInputChange} />
-            Field 2
+            Fiat Currency
           </label>
         </div>
-        <input type="submit" value="Buy" /> 
+        <input type="submit" value="Buy"/> 
       </center>
       </form>
     );
