@@ -31,12 +31,6 @@ class DApps extends React.Component {
   }
 
   render() {
-    const browserVersion = getTrsutBrowserVersion()
-    if (browserVersion >= 1.984 && isIOS) {
-      return (
-        <DAppsDisabled />
-      )
-    }
     const elements = this.state.data || [];
     const categoryID = '5abcceb4682db901241a0636';
     const newDApp = elements.filter((item) => {
