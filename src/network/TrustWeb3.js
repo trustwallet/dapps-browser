@@ -1,5 +1,5 @@
 import getWeb3 from "../utils/provider";
-
+import { getCoinId } from "../utils/utils";
 
 export class TrustWeb3 {
 
@@ -12,8 +12,9 @@ export class TrustWeb3 {
             this.web3.version.getNetwork((err, networkId) => {
                 if (err) {
                     return reject(err)
-                }
-                return resolve(parseInt(networkId, 10))
+                } 
+
+                return resolve(getCoinId(parseInt(networkId, 10)))
               })
         })
     }
