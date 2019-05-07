@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { osName } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
@@ -22,7 +21,7 @@ class DApps extends React.Component {
   fetch = async() => {
     try {
       const networkId = await this.trustWeb3.getNetwork();
-      const bootstrap = await this.trustClient.fetchBootstrap(networkId, osName);
+      const bootstrap = await this.trustClient.fetchBootstrap(networkId);
       this.setState({ data: bootstrap.data.docs });
     } catch (error) {
       console.log(`Error at fetch()`, error)
@@ -38,7 +37,7 @@ class DApps extends React.Component {
     const othersDApp = elements.filter((item) => {
       return item.category._id !== categoryID;
     });
-    console.log(othersDApp)
+
     return (
       <div>
         <div className="CardSlider">
