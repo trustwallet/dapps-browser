@@ -1,5 +1,4 @@
 import React from 'react';
-import { osName } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import { TrustClient } from '../network/TrustClient';
@@ -21,7 +20,7 @@ class DAppsCategory extends React.Component {
   async fetch() {
     try {
       const network = await this.trustWeb3.getNetwork();
-      const dapps = await this.trustClient.fetchDAppsByCategoryID(this.props.id, network, osName)
+      const dapps = await this.trustClient.fetchDAppsByCategoryID(this.props.id, network)
       const list = dapps.data.docs;
       const category = dapps.data.category;
       
