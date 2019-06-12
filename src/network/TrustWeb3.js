@@ -7,6 +7,11 @@ export class TrustWeb3 {
         this.web3 = getWeb3()
     }
 
+    isTrust = () => {
+        console.log("Is trust ", this.web3)
+        return this.web3.isTrust
+    }
+
     getNetwork = () => {
         return new Promise((resolve, reject) => {
             this.web3.version.getNetwork((err, networkId) => {

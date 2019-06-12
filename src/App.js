@@ -12,6 +12,8 @@ import ContactUs from './components/ContactUs.js';
 import GetEther from './dapps/GetEther/index';
 import BuyCrypto from './dapps/BuyCrypto/index';
 import SandBox from './components/Sandbox';
+// import { NonWeb3Browser } from "./components/NonWeb3Browser";
+import { TrustWeb3 } from "./network//TrustWeb3";
 
 const DAppsCategoryComponent = ({ match }) => (
   <div>
@@ -27,10 +29,7 @@ class ModalSwitch extends React.Component {
   componentWillUpdate(nextProps) {
     const { location } = this.props;
 
-    if (
-      nextProps.history.action !== 'POP' &&
-      (!location.state || !location.state.modal)
-    ) {
+    if ( nextProps.history.action !== 'POP' && (!location.state || !location.state.modal)) {
       this.previousLocation = this.props.location;
     }
   }
@@ -44,6 +43,16 @@ class ModalSwitch extends React.Component {
       location.state.modal &&
       this.previousLocation !== location
     );
+    const isTrust = new TrustWeb3().isTrust()
+      
+    if (!isTrust) {
+      return (
+      <div>
+         <p>Have that app already?</p>
+      </div>
+      )
+    }
+
     return (
       <div>
         <Container>
