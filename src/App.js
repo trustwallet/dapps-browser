@@ -43,15 +43,15 @@ class ModalSwitch extends React.Component {
       location.state.modal &&
       this.previousLocation !== location
     );
-    const isTrust = new TrustWeb3().isTrust()
+    // const isTrust = new TrustWeb3().isTrust()
       
-    if (!isTrust) {
-      return (
-      <div>
-         <p>Have that app already?</p>
-      </div>
-      )
-    }
+    // if (!isTrust) {
+    //   return (
+    //   <div>
+    //      <p>Have that app already?</p>
+    //   </div>
+    //   )
+    // }
 
     return (
       <div>
