@@ -7,7 +7,7 @@ function ContactUs() {
       <h1>Contact Us</h1>
       <ListGroupItem>
         <i className="fab fa-app-store-ios fa-2x" />
-        <a className="contact-us-div" href="https://goo.gl/forms/GEVXRc2QSLVuOnMb2" rel="noopener noreferrer" target="_blank">Submit DApp</a>
+        <a className="contact-us-div" href="https://forms.gle/zT4X9ZuipFhEDQzF7" rel="noopener noreferrer" target="_blank">Submit DApp</a>
       </ListGroupItem>
       <ListGroupItem>
         <i className="fab fa-twitter fa-2x" />
