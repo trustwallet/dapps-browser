@@ -13,7 +13,7 @@ import GetEther from './dapps/GetEther/index';
 import BuyCrypto from './dapps/BuyCrypto/index';
 import SandBox from './components/Sandbox';
 // import { NonWeb3Browser } from "./components/NonWeb3Browser";
-import { TrustWeb3 } from "./network//TrustWeb3";
+// import { TrustWeb3 } from "./network//TrustWeb3";
 
 const DAppsCategoryComponent = ({ match }) => (
   <div>
